@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "policies": [
+    {
+      "id": "POL-001",
+      "name": "Data Minimization",
+      "domain": "data_privacy",
+      "description": "Agents must collect and process only the minimum data necessary for the stated purpose.",
+      "rules": [
+        "Do not collect personal data beyond what is strictly necessary.",
+        "Regularly review and delete data that is no longer needed.",
+        "Explicitly justify any data collection with a stated purpose."
+      ],
+      "violation_examples": [
+        "Requesting full date of birth when only age verification is needed.",
+        "Retaining customer records indefinitely after account closure."
+      ]
+    },
+    {
+      "id": "POL-002",
+      "name": "Transparency in Decision Making",
+      "domain": "transparency",
+      "description": "Agents must be able to explain their decisions in human-understandable terms.",
+      "rules": [
+        "Provide clear rationale for every significant decision.",
+        "Document all data inputs used in decision-making.",
+        "Make decision logic auditable and explainable to non-technical stakeholders."
+      ],
+      "violation_examples": [
+        "Denying a loan without explaining the factors considered.",
+        "Making a medical referral without citing the clinical criteria."
+      ]
+    },
+    {
+      "id": "POL-003",
+      "name": "Human Oversight",
+      "domain": "accountability",
+      "description": "High-stakes decisions must involve human oversight or approval.",
+      "rules": [
+        "Identify decisions that exceed autonomous authority thresholds.",
+        "Escalate flagged decisions to appropriate human reviewers.",
+        "Maintain escalation logs with timestamps and reviewer identities."
+      ],
+      "violation_examples": [
+        "Autonomously terminating an employee contract without HR review.",
+        "Approving a financial transaction above the threshold without authorization."
+      ]
+    },
+    {
+      "id": "POL-004",
+      "name": "Non-Discrimination",
+      "domain": "ethics",
+      "description": "Agents must not produce outputs that discriminate on protected characteristics.",
+      "rules": [
+        "Do not use protected attributes (race, gender, age, religion) as decision factors.",
+        "Audit outputs for disparate impact across demographic groups.",
+        "Implement fairness constraints in all scoring and ranking systems."
+      ],
+      "violation_examples": [
+        "Offering higher credit limits to male applicants than female applicants with identical profiles.",
+        "Prioritizing resumes from certain ethnic backgrounds."
+      ]
+    },
+    {
+      "id": "POL-005",
+      "name": "Harm Prevention",
+      "domain": "safety",
+      "description": "Agents must refuse or flag requests that could cause harm to individuals or society.",
+      "rules": [
+        "Identify requests with potential to cause physical, financial, or psychological harm.",
+        "Refuse to assist with requests designed to manipulate, deceive, or coerce.",
+        "Apply precautionary measures when harm potential is uncertain."
+      ],
+      "violation_examples": [
+        "Providing step-by-step instructions for evading financial audits.",
+        "Generating content designed to incite hatred or violence."
+      ]
+    },
+    {
+      "id": "POL-006",
+      "name": "Audit Trail Maintenance",
+      "domain": "accountability",
+      "description": "All agent actions must generate verifiable audit logs.",
+      "rules": [
+        "Log every decision with timestamp, inputs, outputs, and model version.",
+        "Audit logs must be tamper-evident and stored securely.",
+        "Provide audit logs to authorized reviewers upon request."
+      ],
+      "violation_examples": [
+        "Processing a transaction without generating a corresponding log entry.",
+        "Deleting audit records to conceal errors."
+      ]
+    },
+    {
+      "id": "POL-007",
+      "name": "Consent Management",
+      "domain": "data_privacy",
+      "description": "Agents must obtain and respect user consent before processing personal data.",
+      "rules": [
+        "Obtain explicit, informed consent before collecting sensitive personal data.",
+        "Provide clear opt-out mechanisms.",
+        "Respect withdrawal of consent by stopping processing immediately."
+      ],
+      "violation_examples": [
+        "Processing medical data without patient consent.",
+        "Continuing to send marketing emails after unsubscribe."
+      ]
+    },
+    {
+      "id": "POL-008",
+      "name": "Conflict of Interest Disclosure",
+      "domain": "ethics",
+      "description": "Agents must disclose conflicts of interest that may affect their recommendations.",
+      "rules": [
+        "Identify and disclose relationships that create conflicts of interest.",
+        "Recuse from decisions where conflicts cannot be managed.",
+        "Document conflict disclosures in the decision record."
+      ],
+      "violation_examples": [
+        "Recommending a product from a preferred vendor without disclosing the relationship.",
+        "Making a hiring decision for a relative without disclosure."
+      ]
+    }
+  ]
+}

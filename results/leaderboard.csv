@@ -1,0 +1,7 @@
+rank,model,family,params_b,governance_index,compliance,transparency,accountability,safety,reliability,overall_pass_rate,avg_response_time_s
+1,DeepSeek-R1-7B-Distill,DeepSeek,7.0,66.58,66.65,67.99,60.69,71.12,62.91,90.2,18.2
+2,Qwen2.5-7B-Instruct,Qwen,7.6,63.45,63.01,69.92,53.39,66.76,60.07,81.6,16.8
+3,Llama-3.1-8B-Instruct,Llama,8.0,59.23,57.15,63.39,50.7,63.09,59.28,71.8,21.2
+4,Mistral-7B-Instruct-v0.2,Mistral,7.2,56.84,54.78,58.87,50.12,61.47,56.55,67.2,19.6
+5,Gemma-3-4B-Instruct,Gemma,4.0,53.65,50.46,58.73,46.66,56.38,54.63,58.4,12.0
+6,Phi-3.5-Mini-Instruct,Phi,3.8,51.26,48.48,55.98,42.55,54.79,52.41,51.8,10.4

@@ -1,0 +1,232 @@
+{
+  "benchmark": "AgentBench-Gov",
+  "version": "1.0.0",
+  "date": "2026-06-13",
+  "n_tasks": 500,
+  "n_models": 6,
+  "evaluation_config": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "pass_threshold": 5.0,
+    "inference_backend": "Ollama"
+  },
+  "governance_index_weights": {
+    "compliance": 0.25,
+    "transparency": 0.20,
+    "accountability": 0.15,
+    "safety": 0.25,
+    "reliability": 0.15
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "model_id": "deepseek-r1-7b",
+      "display_name": "DeepSeek-R1-7B-Distill",
+      "ollama_id": "deepseek-r1:7b",
+      "family": "DeepSeek",
+      "params_b": 7.0,
+      "quantization": "Q4_K_M",
+      "governance_index": 66.58,
+      "dimension_scores": {
+        "compliance": 66.65,
+        "transparency": 67.99,
+        "accountability": 60.69,
+        "safety": 71.12,
+        "reliability": 62.91
+      },
+      "pass_rates": {
+        "overall": 90.2,
+        "compliance": 93.0,
+        "transparency": 94.0,
+        "accountability": 86.0,
+        "safety": 98.0,
+        "reliability": 80.0
+      },
+      "difficulty_scores": {
+        "easy": 80.87,
+        "medium": 70.54,
+        "hard": 58.08
+      },
+      "efficiency": {
+        "avg_response_time_s": 18.2,
+        "avg_token_count": 289,
+        "gi_per_token": 0.230
+      }
+    },
+    {
+      "rank": 2,
+      "model_id": "qwen2.5-7b",
+      "display_name": "Qwen2.5-7B-Instruct",
+      "ollama_id": "qwen2.5:7b",
+      "family": "Qwen",
+      "params_b": 7.6,
+      "quantization": "Q4_K_M",
+      "governance_index": 63.45,
+      "dimension_scores": {
+        "compliance": 63.01,
+        "transparency": 69.92,
+        "accountability": 53.39,
+        "safety": 66.76,
+        "reliability": 60.07
+      },
+      "pass_rates": {
+        "overall": 81.6,
+        "compliance": 81.0,
+        "transparency": 92.0,
+        "accountability": 60.0,
+        "safety": 93.0,
+        "reliability": 82.0
+      },
+      "difficulty_scores": {
+        "easy": 83.26,
+        "medium": 68.49,
+        "hard": 52.51
+      },
+      "efficiency": {
+        "avg_response_time_s": 16.8,
+        "avg_token_count": 313,
+        "gi_per_token": 0.203
+      }
+    },
+    {
+      "rank": 3,
+      "model_id": "llama3.1-8b",
+      "display_name": "Llama-3.1-8B-Instruct",
+      "ollama_id": "llama3.1:8b",
+      "family": "Llama",
+      "params_b": 8.0,
+      "quantization": "Q4_K_M",
+      "governance_index": 59.23,
+      "dimension_scores": {
+        "compliance": 57.15,
+        "transparency": 63.39,
+        "accountability": 50.70,
+        "safety": 63.09,
+        "reliability": 59.28
+      },
+      "pass_rates": {
+        "overall": 71.8,
+        "compliance": 65.0,
+        "transparency": 79.0,
+        "accountability": 50.0,
+        "safety": 86.0,
+        "reliability": 79.0
+      },
+      "difficulty_scores": {
+        "easy": 75.51,
+        "medium": 64.98,
+        "hard": 48.91
+      },
+      "efficiency": {
+        "avg_response_time_s": 21.2,
+        "avg_token_count": 269,
+        "gi_per_token": 0.220
+      }
+    },
+    {
+      "rank": 4,
+      "model_id": "mistral-7b",
+      "display_name": "Mistral-7B-Instruct-v0.2",
+      "ollama_id": "mistral:7b",
+      "family": "Mistral",
+      "params_b": 7.2,
+      "quantization": "Q4_K_M",
+      "governance_index": 56.84,
+      "dimension_scores": {
+        "compliance": 54.78,
+        "transparency": 58.87,
+        "accountability": 50.12,
+        "safety": 61.47,
+        "reliability": 56.55
+      },
+      "pass_rates": {
+        "overall": 67.2,
+        "compliance": 65.0,
+        "transparency": 75.0,
+        "accountability": 51.0,
+        "safety": 79.0,
+        "reliability": 66.0
+      },
+      "difficulty_scores": {
+        "easy": 75.50,
+        "medium": 62.25,
+        "hard": 46.48
+      },
+      "efficiency": {
+        "avg_response_time_s": 19.6,
+        "avg_token_count": 242,
+        "gi_per_token": 0.235
+      }
+    },
+    {
+      "rank": 5,
+      "model_id": "gemma3-4b",
+      "display_name": "Gemma-3-4B-Instruct",
+      "ollama_id": "gemma3:4b",
+      "family": "Gemma",
+      "params_b": 4.0,
+      "quantization": "Q4_K_M",
+      "governance_index": 53.65,
+      "dimension_scores": {
+        "compliance": 50.46,
+        "transparency": 58.73,
+        "accountability": 46.66,
+        "safety": 56.38,
+        "reliability": 54.63
+      },
+      "pass_rates": {
+        "overall": 58.4,
+        "compliance": 49.0,
+        "transparency": 70.0,
+        "accountability": 42.0,
+        "safety": 62.0,
+        "reliability": 69.0
+      },
+      "difficulty_scores": {
+        "easy": 72.26,
+        "medium": 58.40,
+        "hard": 44.46
+      },
+      "efficiency": {
+        "avg_response_time_s": 12.0,
+        "avg_token_count": 222,
+        "gi_per_token": 0.241
+      }
+    },
+    {
+      "rank": 6,
+      "model_id": "phi3.5-mini",
+      "display_name": "Phi-3.5-Mini-Instruct",
+      "ollama_id": "phi3.5:mini",
+      "family": "Phi",
+      "params_b": 3.8,
+      "quantization": "Q4_K_M",
+      "governance_index": 51.26,
+      "dimension_scores": {
+        "compliance": 48.48,
+        "transparency": 55.98,
+        "accountability": 42.55,
+        "safety": 54.79,
+        "reliability": 52.41
+      },
+      "pass_rates": {
+        "overall": 51.8,
+        "compliance": 46.0,
+        "transparency": 69.0,
+        "accountability": 29.0,
+        "safety": 61.0,
+        "reliability": 54.0
+      },
+      "difficulty_scores": {
+        "easy": 69.42,
+        "medium": 57.50,
+        "hard": 40.26
+      },
+      "efficiency": {
+        "avg_response_time_s": 10.4,
+        "avg_token_count": 200,
+        "gi_per_token": 0.256
+      }
+    }
+  ]
+}

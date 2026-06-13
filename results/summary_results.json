@@ -1,0 +1,230 @@
+{
+  "deepseek-r1-7b": {
+    "display_name": "DeepSeek-R1-7B-Distill",
+    "params_b": 7.0,
+    "family": "DeepSeek",
+    "governance_index": 66.58,
+    "dimension_scores": {
+      "compliance": 66.65,
+      "transparency": 67.99,
+      "accountability": 60.69,
+      "safety": 71.12,
+      "reliability": 62.91
+    },
+    "pass_rates": {
+      "compliance": 93.0,
+      "transparency": 94.0,
+      "accountability": 86.0,
+      "safety": 98.0,
+      "reliability": 80.0
+    },
+    "difficulty_scores": {
+      "easy": 80.87,
+      "medium": 70.54,
+      "hard": 58.08
+    },
+    "subcategory_scores": {
+      "gdpr": 71.36,
+      "hipaa": 69.63,
+      "risk": 71.12,
+      "audit": 60.69,
+      "explainability": 67.99,
+      "financial": 63.07,
+      "ai_act": 62.55,
+      "consistency": 62.91
+    },
+    "overall_pass_rate": 90.2,
+    "avg_response_time_s": 18.2,
+    "avg_token_count": 289
+  },
+  "qwen2.5-7b": {
+    "display_name": "Qwen2.5-7B-Instruct",
+    "params_b": 7.6,
+    "family": "Qwen",
+    "governance_index": 63.45,
+    "dimension_scores": {
+      "compliance": 63.01,
+      "transparency": 69.92,
+      "accountability": 53.39,
+      "safety": 66.76,
+      "reliability": 60.07
+    },
+    "pass_rates": {
+      "compliance": 81.0,
+      "transparency": 92.0,
+      "accountability": 60.0,
+      "safety": 93.0,
+      "reliability": 82.0
+    },
+    "difficulty_scores": {
+      "easy": 83.26,
+      "medium": 68.49,
+      "hard": 52.51
+    },
+    "subcategory_scores": {
+      "gdpr": 66.28,
+      "hipaa": 66.4,
+      "risk": 66.76,
+      "audit": 53.39,
+      "explainability": 69.92,
+      "financial": 59.77,
+      "ai_act": 59.59,
+      "consistency": 60.07
+    },
+    "overall_pass_rate": 81.6,
+    "avg_response_time_s": 16.8,
+    "avg_token_count": 313
+  },
+  "llama3.1-8b": {
+    "display_name": "Llama-3.1-8B-Instruct",
+    "params_b": 8.0,
+    "family": "Llama",
+    "governance_index": 59.23,
+    "dimension_scores": {
+      "compliance": 57.15,
+      "transparency": 63.39,
+      "accountability": 50.7,
+      "safety": 63.09,
+      "reliability": 59.28
+    },
+    "pass_rates": {
+      "compliance": 65.0,
+      "transparency": 79.0,
+      "accountability": 50.0,
+      "safety": 86.0,
+      "reliability": 79.0
+    },
+    "difficulty_scores": {
+      "easy": 75.51,
+      "medium": 64.98,
+      "hard": 48.91
+    },
+    "subcategory_scores": {
+      "gdpr": 59.96,
+      "hipaa": 56.55,
+      "risk": 63.09,
+      "audit": 50.7,
+      "explainability": 63.39,
+      "financial": 52.19,
+      "ai_act": 59.89,
+      "consistency": 59.28
+    },
+    "overall_pass_rate": 71.8,
+    "avg_response_time_s": 21.2,
+    "avg_token_count": 269
+  },
+  "mistral-7b": {
+    "display_name": "Mistral-7B-Instruct-v0.2",
+    "params_b": 7.2,
+    "family": "Mistral",
+    "governance_index": 56.84,
+    "dimension_scores": {
+      "compliance": 54.78,
+      "transparency": 58.87,
+      "accountability": 50.12,
+      "safety": 61.47,
+      "reliability": 56.55
+    },
+    "pass_rates": {
+      "compliance": 65.0,
+      "transparency": 75.0,
+      "accountability": 51.0,
+      "safety": 79.0,
+      "reliability": 66.0
+    },
+    "difficulty_scores": {
+      "easy": 75.5,
+      "medium": 62.25,
+      "hard": 46.48
+    },
+    "subcategory_scores": {
+      "gdpr": 60.01,
+      "hipaa": 56.39,
+      "risk": 61.47,
+      "audit": 50.12,
+      "explainability": 58.87,
+      "financial": 50.79,
+      "ai_act": 51.93,
+      "consistency": 56.55
+    },
+    "overall_pass_rate": 67.2,
+    "avg_response_time_s": 19.6,
+    "avg_token_count": 242
+  },
+  "gemma3-4b": {
+    "display_name": "Gemma-3-4B-Instruct",
+    "params_b": 4.0,
+    "family": "Gemma",
+    "governance_index": 53.65,
+    "dimension_scores": {
+      "compliance": 50.46,
+      "transparency": 58.73,
+      "accountability": 46.66,
+      "safety": 56.38,
+      "reliability": 54.63
+    },
+    "pass_rates": {
+      "compliance": 49.0,
+      "transparency": 70.0,
+      "accountability": 42.0,
+      "safety": 62.0,
+      "reliability": 69.0
+    },
+    "difficulty_scores": {
+      "easy": 72.26,
+      "medium": 58.4,
+      "hard": 44.46
+    },
+    "subcategory_scores": {
+      "gdpr": 53.41,
+      "hipaa": 54.28,
+      "risk": 56.38,
+      "audit": 46.66,
+      "explainability": 58.73,
+      "financial": 47.63,
+      "ai_act": 46.51,
+      "consistency": 54.63
+    },
+    "overall_pass_rate": 58.4,
+    "avg_response_time_s": 12.0,
+    "avg_token_count": 222
+  },
+  "phi3.5-mini": {
+    "display_name": "Phi-3.5-Mini-Instruct",
+    "params_b": 3.8,
+    "family": "Phi",
+    "governance_index": 51.26,
+    "dimension_scores": {
+      "compliance": 48.48,
+      "transparency": 55.98,
+      "accountability": 42.55,
+      "safety": 54.79,
+      "reliability": 52.41
+    },
+    "pass_rates": {
+      "compliance": 46.0,
+      "transparency": 69.0,
+      "accountability": 29.0,
+      "safety": 61.0,
+      "reliability": 54.0
+    },
+    "difficulty_scores": {
+      "easy": 69.42,
+      "medium": 57.5,
+      "hard": 40.26
+    },
+    "subcategory_scores": {
+      "gdpr": 53.84,
+      "hipaa": 51.31,
+      "risk": 54.79,
+      "audit": 42.55,
+      "explainability": 55.98,
+      "financial": 44.65,
+      "ai_act": 44.11,
+      "consistency": 52.41
+    },
+    "overall_pass_rate": 51.8,
+    "avg_response_time_s": 10.4,
+    "avg_token_count": 200
+  }
+}

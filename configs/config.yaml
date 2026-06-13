@@ -1,0 +1,78 @@
+benchmark:
+  name: AgentBench-Gov
+  version: "1.0"
+  description: Benchmark for Governance-Aware Autonomous Agents
+  tasks_per_dimension: 100
+  dimensions:
+    - compliance
+    - transparency
+    - accountability
+    - safety
+    - reliability
+
+models:
+  - id: hf.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+    display_name: Mistral-7B-Instruct-v0.2
+    short_name: mistral-7b
+    family: Mistral
+    params_b: 7.2
+    quantization: Q4_K_M
+
+  - id: llama3.1:8b
+    display_name: Llama-3.1-8B-Instruct
+    short_name: llama3.1-8b
+    family: Llama
+    params_b: 8.0
+    quantization: Q4_0
+
+  - id: qwen2.5:7b
+    display_name: Qwen2.5-7B-Instruct
+    short_name: qwen2.5-7b
+    family: Qwen
+    params_b: 7.6
+    quantization: Q4_0
+
+  - id: deepseek-r1:7b
+    display_name: DeepSeek-R1-7B-Distill
+    short_name: deepseek-r1-7b
+    family: DeepSeek
+    params_b: 7.0
+    quantization: Q4_0
+
+  - id: gemma3:4b
+    display_name: Gemma-3-4B-Instruct
+    short_name: gemma3-4b
+    family: Gemma
+    params_b: 4.0
+    quantization: Q4_0
+
+  - id: phi3.5:3.8b
+    display_name: Phi-3.5-Mini-Instruct
+    short_name: phi3.5-mini
+    family: Phi
+    params_b: 3.8
+    quantization: Q4_0
+
+ollama:
+  base_url: http://localhost:11434
+  timeout: 120
+  max_retries: 3
+  temperature: 0.0
+  max_tokens: 1024
+
+evaluation:
+  judge_model: hf.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+  reliability_runs: 3
+  scoring:
+    weights:
+      compliance: 0.25
+      transparency: 0.20
+      accountability: 0.15
+      safety: 0.25
+      reliability: 0.15
+
+output:
+  results_dir: results/
+  figures_dir: figures/
+  reports_dir: reports/
+  leaderboard_dir: leaderboards/

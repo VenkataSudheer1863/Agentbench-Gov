@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "regulatory_frameworks": [
+    {
+      "id": "REG-GDPR",
+      "name": "General Data Protection Regulation",
+      "acronym": "GDPR",
+      "jurisdiction": "European Union",
+      "year": 2018,
+      "domain": "data_privacy",
+      "key_articles": [
+        {"article": "5", "title": "Principles of Processing", "summary": "Data must be processed lawfully, fairly, transparently, for specified purposes, minimized, accurate, and with integrity."},
+        {"article": "6", "title": "Lawful Basis for Processing", "summary": "Processing must have a lawful basis: consent, contract, legal obligation, vital interests, public task, or legitimate interests."},
+        {"article": "17", "title": "Right to Erasure", "summary": "Data subjects have the right to request deletion of their personal data under specified conditions."},
+        {"article": "25", "title": "Data Protection by Design", "summary": "Controllers must implement data protection measures by design and by default."},
+        {"article": "33", "title": "Breach Notification", "summary": "Supervisory authorities must be notified of personal data breaches within 72 hours."},
+        {"article": "35", "title": "Data Protection Impact Assessment", "summary": "DPIA required for high-risk processing activities."}
+      ],
+      "penalties": "Up to €20 million or 4% of global annual turnover, whichever is higher."
+    },
+    {
+      "id": "REG-AIACT",
+      "name": "EU Artificial Intelligence Act",
+      "acronym": "EU AI Act",
+      "jurisdiction": "European Union",
+      "year": 2024,
+      "domain": "ai_governance",
+      "key_articles": [
+        {"article": "5", "title": "Prohibited AI Practices", "summary": "Prohibits AI systems using subliminal techniques, exploiting vulnerabilities, social scoring, and real-time biometric surveillance."},
+        {"article": "9", "title": "Risk Management System", "summary": "High-risk AI systems must implement risk management throughout lifecycle."},
+        {"article": "13", "title": "Transparency", "summary": "High-risk AI systems must be sufficiently transparent to enable users to interpret and use outputs."},
+        {"article": "14", "title": "Human Oversight", "summary": "High-risk AI systems must be designed for effective human oversight."},
+        {"article": "17", "title": "Quality Management", "summary": "Providers of high-risk AI must implement quality management systems."},
+        {"article": "26", "title": "Obligations for Deployers", "summary": "Deployers of high-risk AI must implement technical and organizational measures."}
+      ],
+      "risk_tiers": ["Unacceptable", "High-Risk", "Limited-Risk", "Minimal-Risk"],
+      "penalties": "Up to €35 million or 7% of global annual turnover for prohibited AI violations."
+    },
+    {
+      "id": "REG-HIPAA",
+      "name": "Health Insurance Portability and Accountability Act",
+      "acronym": "HIPAA",
+      "jurisdiction": "United States",
+      "year": 1996,
+      "domain": "healthcare_privacy",
+      "key_rules": [
+        {"rule": "Privacy Rule", "summary": "Establishes national standards for the protection of PHI. Limits use and disclosure without patient authorization."},
+        {"rule": "Security Rule", "summary": "Requires covered entities to implement safeguards to protect ePHI including administrative, physical, and technical controls."},
+        {"rule": "Breach Notification Rule", "summary": "Requires notification to affected individuals, HHS, and media (if over 500 affected) within 60 days of breach discovery."},
+        {"rule": "Minimum Necessary Standard", "summary": "Covered entities must make reasonable efforts to limit PHI to the minimum necessary."}
+      ],
+      "covered_entities": ["Health plans", "Health care providers", "Health care clearinghouses", "Business associates"],
+      "penalties": "Civil penalties from $100 to $50,000 per violation; criminal penalties up to 10 years imprisonment."
+    },
+    {
+      "id": "REG-SOX",
+      "name": "Sarbanes-Oxley Act",
+      "acronym": "SOX",
+      "jurisdiction": "United States",
+      "year": 2002,
+      "domain": "financial_reporting",
+      "key_sections": [
+        {"section": "302", "title": "Corporate Responsibility for Financial Reports", "summary": "CEOs and CFOs must certify the accuracy of financial reports."},
+        {"section": "404", "title": "Management Assessment of Internal Controls", "summary": "Annual assessment and reporting on adequacy of internal control structure."},
+        {"section": "409", "title": "Real Time Disclosure", "summary": "Material changes in financial condition must be disclosed on a rapid and current basis."}
+      ]
+    },
+    {
+      "id": "REG-NIST-AI",
+      "name": "NIST AI Risk Management Framework",
+      "acronym": "NIST AI RMF",
+      "jurisdiction": "United States",
+      "year": 2023,
+      "domain": "ai_risk",
+      "core_functions": ["Govern", "Map", "Measure", "Manage"],
+      "trustworthiness_characteristics": [
+        "Accountable and Transparent",
+        "Explainable and Interpretable",
+        "Fair with Harmful Bias Managed",
+        "Privacy Enhanced",
+        "Reliable, Resilient, and Robust",
+        "Safe",
+        "Secure and Resilient"
+      ]
+    }
+  ]
+}
