@@ -185,7 +185,7 @@ agentbench-gov/
   author    = {Paruchuri, Venkata Sudheer},
   year      = {2026},
   note      = {Submitted to AI \& Ethics, Springer},
-  url       = {https://github.com/your-org/agentbench-gov}
+  url       = {https://github.com/VenkataSudheer1863/Agentbench-Gov}
 }
 ```
 
