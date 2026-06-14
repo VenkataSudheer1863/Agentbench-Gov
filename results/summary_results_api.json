@@ -1,0 +1,278 @@
+{
+  "llama-3.1-8b": {
+    "model_key": "llama-3.1-8b",
+    "display_name": "Llama-3.1-8B-Instruct",
+    "api_id": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "family": "Llama",
+    "params_b": 8.0,
+    "governance_index": 77.38,
+    "dimension_scores": {
+      "safety": 79.76,
+      "compliance": 70.21,
+      "accountability": 86.91,
+      "transparency": 76.0,
+      "reliability": 77.66
+    },
+    "pass_rates": {
+      "safety": 87.5,
+      "compliance": 92.5,
+      "accountability": 97.2,
+      "transparency": 87.5,
+      "reliability": 87.2
+    },
+    "difficulty_scores": {
+      "medium": 76.96,
+      "hard": 78.9,
+      "easy": 77.92
+    },
+    "subcategory_scores": {
+      "risk": 79.76,
+      "financial": 71.14,
+      "audit": 86.91,
+      "explainability": 76.0,
+      "consistency": 77.66,
+      "gdpr": 75.53,
+      "ai_act": 64.63,
+      "hipaa": 72.66
+    },
+    "overall_pass_rate": 90.3,
+    "overall_mean_pct": 77.93,
+    "overall_std_pct": 23.59,
+    "avg_response_time_s": 9.24,
+    "avg_response_words": 581.9,
+    "n_tasks": 195,
+    "n_passed": 176,
+    "n_failed": 19
+  },
+  "llama-3.3-70b": {
+    "model_key": "llama-3.3-70b",
+    "display_name": "Llama-3.3-70B-Versatile",
+    "api_id": "llama-3.3-70b-versatile",
+    "provider": "groq",
+    "family": "Llama",
+    "params_b": 70.0,
+    "governance_index": 73.65,
+    "dimension_scores": {
+      "safety": 73.01,
+      "compliance": 74.56,
+      "accountability": 74.76,
+      "transparency": 72.53,
+      "reliability": 73.59
+    },
+    "pass_rates": {
+      "safety": 87.5,
+      "compliance": 87.5,
+      "accountability": 100.0,
+      "transparency": 95.0,
+      "reliability": 89.7
+    },
+    "difficulty_scores": {
+      "medium": 74.18,
+      "hard": 73.11,
+      "easy": 73.9
+    },
+    "subcategory_scores": {
+      "risk": 73.01,
+      "financial": 73.07,
+      "audit": 74.76,
+      "explainability": 72.53,
+      "consistency": 73.59,
+      "gdpr": 77.53,
+      "ai_act": 71.23,
+      "hipaa": 79.06
+    },
+    "overall_pass_rate": 91.8,
+    "overall_mean_pct": 73.67,
+    "overall_std_pct": 20.91,
+    "avg_response_time_s": 5.4,
+    "avg_response_words": 617.3,
+    "n_tasks": 195,
+    "n_passed": 179,
+    "n_failed": 16
+  },
+  "qwen3-32b": {
+    "model_key": "qwen3-32b",
+    "display_name": "Qwen3-32B",
+    "api_id": "qwen/qwen3-32b",
+    "provider": "groq",
+    "family": "Qwen",
+    "params_b": 32.0,
+    "governance_index": 63.24,
+    "dimension_scores": {
+      "safety": 60.02,
+      "compliance": 63.66,
+      "accountability": 67.73,
+      "transparency": 58.35,
+      "reliability": 69.93
+    },
+    "pass_rates": {
+      "safety": 75.0,
+      "compliance": 72.5,
+      "accountability": 86.1,
+      "transparency": 75.0,
+      "reliability": 89.7
+    },
+    "difficulty_scores": {
+      "medium": 65.49,
+      "hard": 62.7,
+      "easy": 60.67
+    },
+    "subcategory_scores": {
+      "risk": 60.02,
+      "financial": 69.58,
+      "audit": 67.73,
+      "explainability": 58.35,
+      "consistency": 69.93,
+      "gdpr": 64.5,
+      "ai_act": 59.69,
+      "hipaa": 61.15
+    },
+    "overall_pass_rate": 79.5,
+    "overall_mean_pct": 63.83,
+    "overall_std_pct": 22.72,
+    "avg_response_time_s": 11.38,
+    "avg_response_words": 235.0,
+    "n_tasks": 195,
+    "n_passed": 155,
+    "n_failed": 40
+  },
+  "llama-4-scout-17b": {
+    "model_key": "llama-4-scout-17b",
+    "display_name": "Llama-4-Scout-17B-16E",
+    "api_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "provider": "groq",
+    "family": "Llama4",
+    "params_b": 17.0,
+    "governance_index": 80.62,
+    "dimension_scores": {
+      "safety": 79.3,
+      "compliance": 83.31,
+      "accountability": 82.64,
+      "transparency": 79.97,
+      "reliability": 77.21
+    },
+    "pass_rates": {
+      "safety": 85.0,
+      "compliance": 95.0,
+      "accountability": 100.0,
+      "transparency": 97.5,
+      "reliability": 89.7
+    },
+    "difficulty_scores": {
+      "medium": 80.58,
+      "hard": 80.76,
+      "easy": 77.93
+    },
+    "subcategory_scores": {
+      "risk": 79.3,
+      "financial": 83.3,
+      "audit": 82.64,
+      "explainability": 79.97,
+      "consistency": 77.21,
+      "gdpr": 88.72,
+      "ai_act": 75.87,
+      "hipaa": 90.0
+    },
+    "overall_pass_rate": 93.3,
+    "overall_mean_pct": 80.46,
+    "overall_std_pct": 19.75,
+    "avg_response_time_s": 1.98,
+    "avg_response_words": 588.3,
+    "n_tasks": 195,
+    "n_passed": 182,
+    "n_failed": 13
+  },
+  "gpt-oss-120b": {
+    "model_key": "gpt-oss-120b",
+    "display_name": "GPT-OSS-120B",
+    "api_id": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "family": "GPT-OSS",
+    "params_b": 120.0,
+    "governance_index": 51.26,
+    "dimension_scores": {
+      "safety": 47.39,
+      "compliance": 64.7,
+      "accountability": 46.28,
+      "transparency": 37.19,
+      "reliability": 59.04
+    },
+    "pass_rates": {
+      "safety": 60.0,
+      "compliance": 80.0,
+      "accountability": 58.3,
+      "transparency": 40.0,
+      "reliability": 79.5
+    },
+    "difficulty_scores": {
+      "medium": 56.08,
+      "hard": 45.48,
+      "easy": 53.33
+    },
+    "subcategory_scores": {
+      "risk": 47.39,
+      "financial": 61.93,
+      "audit": 46.28,
+      "explainability": 37.19,
+      "consistency": 59.04,
+      "gdpr": 71.59,
+      "ai_act": 55.48,
+      "hipaa": 76.61
+    },
+    "overall_pass_rate": 63.6,
+    "overall_mean_pct": 50.98,
+    "overall_std_pct": 28.44,
+    "avg_response_time_s": 8.78,
+    "avg_response_words": 313.5,
+    "n_tasks": 195,
+    "n_passed": 124,
+    "n_failed": 71
+  },
+  "allam-2-7b": {
+    "model_key": "allam-2-7b",
+    "display_name": "Allam-2-7B",
+    "api_id": "allam-2-7b",
+    "provider": "groq",
+    "family": "Allam",
+    "params_b": 7.0,
+    "governance_index": 60.96,
+    "dimension_scores": {
+      "safety": 58.39,
+      "compliance": 63.68,
+      "accountability": 73.68,
+      "transparency": 50.19,
+      "reliability": 62.37
+    },
+    "pass_rates": {
+      "safety": 77.5,
+      "compliance": 77.5,
+      "accountability": 91.7,
+      "transparency": 62.5,
+      "reliability": 74.4
+    },
+    "difficulty_scores": {
+      "medium": 62.55,
+      "hard": 61.59,
+      "easy": 53.55
+    },
+    "subcategory_scores": {
+      "risk": 58.39,
+      "financial": 66.82,
+      "audit": 73.68,
+      "explainability": 50.19,
+      "consistency": 62.37,
+      "gdpr": 65.69,
+      "ai_act": 55.33,
+      "hipaa": 70.94
+    },
+    "overall_pass_rate": 76.4,
+    "overall_mean_pct": 61.41,
+    "overall_std_pct": 24.71,
+    "avg_response_time_s": 11.6,
+    "avg_response_words": 705.9,
+    "n_tasks": 195,
+    "n_passed": 149,
+    "n_failed": 46
+  }
+}

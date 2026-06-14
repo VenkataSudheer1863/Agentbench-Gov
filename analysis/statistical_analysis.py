@@ -1,271 +1,215 @@
 """
-Statistical analysis for AgentBench-Gov paper.
-Computes significance tests, correlations, and summary statistics.
+AgentBench-Gov — Statistical Analysis (API Results Edition)
+============================================================
+Runs comprehensive statistical tests on benchmark results.
+
+Usage:
+    python analysis/statistical_analysis.py
+
+Reads: results/raw_api/{model_key}.json
+Writes: analysis/results/statistical_results.json
 """
 import json
-import numpy as np
-import pandas as pd
+import sys
+import itertools
 from pathlib import Path
+from collections import defaultdict
+
+import numpy as np
 from scipy import stats
-from itertools import combinations
 
-RESULTS_DIR = Path(__file__).parent.parent / "results"
-ANALYSIS_DIR = Path(__file__).parent
+RESULTS_DIR  = Path("results")
+RAW_DIR      = RESULTS_DIR / "raw_api"
+ANALYSIS_DIR = Path("analysis") / "results"
+ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
+
+DIMENSIONS = ["compliance", "transparency", "accountability", "safety", "reliability"]
+GOVERNANCE_WEIGHTS = {
+    "compliance":     0.25,
+    "transparency":   0.20,
+    "accountability": 0.15,
+    "safety":         0.25,
+    "reliability":    0.15,
+}
 
 
-def load_all_scores():
-    with open(RESULTS_DIR / "raw_results.json") as f:
-        raw = json.load(f)
-    return raw
+def load_all_raw() -> dict:
+    """Load per-task results for all models."""
+    model_data = {}
+    for path in sorted(RAW_DIR.glob("*.json")):
+        mk = path.stem
+        with open(path) as f:
+            model_data[mk] = json.load(f)
+    return model_data
 
 
-def pairwise_significance(raw_results):
-    """Compute pairwise Mann-Whitney U tests between models."""
-    models = list(raw_results.keys())
-    results = {}
+def extract_scores(task_list: list, dim: str = None) -> list:
+    """Extract score_pct values, optionally filtered to one dimension."""
+    if dim:
+        return [r["score_pct"] for r in task_list if r.get("dimension") == dim]
+    return [r["score_pct"] for r in task_list]
 
-    for m1, m2 in combinations(models, 2):
-        scores1 = [r["score_pct"] for r in raw_results[m1]["task_results"]]
-        scores2 = [r["score_pct"] for r in raw_results[m2]["task_results"]]
-        stat, p = stats.mannwhitneyu(scores1, scores2, alternative='two-sided')
-        results[f"{m1}_vs_{m2}"] = {
-            "statistic": round(float(stat), 1),
-            "p_value": float(p),
-            "significant": bool(p < 0.05),
-            "effect_size_r": round(float(stat / (len(scores1) * len(scores2) / 2) - 1), 3)
+
+def run_kruskal_wallis(model_data: dict) -> dict:
+    """Kruskal-Wallis H test across all models."""
+    groups = [extract_scores(tasks) for tasks in model_data.values()]
+    h, p = stats.kruskal(*groups)
+    return {
+        "H_statistic": round(h, 4),
+        "p_value":      float(p),
+        "significant":  bool(p < 0.05),
+        "interpretation": (
+            f"H={h:.2f}, p={p:.2e} — Models differ significantly"
+            if p < 0.05 else
+            f"H={h:.2f}, p={p:.4f} — No significant difference"
+        ),
+    }
+
+
+def run_pairwise_mannwhitney(model_data: dict, alpha: float = 0.05) -> dict:
+    """Pairwise Mann-Whitney U with Bonferroni correction."""
+    keys  = list(model_data.keys())
+    n_pairs = len(keys) * (len(keys) - 1) // 2
+    alpha_bonf = alpha / n_pairs if n_pairs > 0 else alpha
+    pairs = {}
+    for m1, m2 in itertools.combinations(keys, 2):
+        s1 = extract_scores(model_data[m1])
+        s2 = extract_scores(model_data[m2])
+        u, p = stats.mannwhitneyu(s1, s2, alternative="two-sided")
+        significant = bool(p < alpha_bonf)
+        # Effect size r = Z / sqrt(N)
+        n = len(s1) + len(s2)
+        z = stats.norm.ppf(1 - p / 2) if p > 0 else 0
+        r = abs(z) / np.sqrt(n)
+        pairs[f"{m1} vs {m2}"] = {
+            "U":           round(float(u), 2),
+            "p_value":     float(p),
+            "p_bonferroni": float(p * n_pairs),
+            "significant": significant,
+            "effect_r":    round(float(r), 4),
         }
-
-    return results
-
-
-def dimension_correlations(raw_results):
-    """Compute Spearman correlations between governance dimensions."""
-    dims = ["compliance", "transparency", "accountability", "safety", "reliability"]
-    model_list = list(raw_results.keys())
-
-    dim_scores_per_model = {}
-    for mid in model_list:
-        tasks = raw_results[mid]["task_results"]
-        dim_scores_per_model[mid] = {
-            d: [r["score_pct"] for r in tasks if r["dimension"] == d]
-            for d in dims
-        }
-
-    # Compute per-task correlation matrix (pooled across models)
-    data = {d: [] for d in dims}
-    # For correlation, use model-level averages
-    for mid in model_list:
-        for d in dims:
-            data[d].append(np.mean(dim_scores_per_model[mid][d]))
-
-    corr_matrix = {}
-    for d1 in dims:
-        corr_matrix[d1] = {}
-        for d2 in dims:
-            if d1 == d2:
-                corr_matrix[d1][d2] = 1.0
-            else:
-                r, p = stats.spearmanr(data[d1], data[d2])
-                corr_matrix[d1][d2] = round(float(r), 3)
-
-    return corr_matrix
+    return {"alpha_bonferroni": alpha_bonf, "n_pairs": n_pairs, "pairs": pairs}
 
 
-def summary_statistics(raw_results):
-    """Compute comprehensive summary statistics."""
-    summary = {}
-    dims = ["compliance", "transparency", "accountability", "safety", "reliability"]
+def run_spearman(model_data: dict) -> dict:
+    """Spearman correlations between dimension scores per model."""
+    correlations = {}
+    for mk, tasks in model_data.items():
+        dim_scores = {}
+        for dim in DIMENSIONS:
+            s = extract_scores(tasks, dim)
+            dim_scores[dim] = s if s else [0]
 
-    for mid, model_data in raw_results.items():
-        tasks = model_data["task_results"]
-        all_scores = [r["score_pct"] for r in tasks]
-
-        dim_stats = {}
-        for d in dims:
-            dim_scores = [r["score_pct"] for r in tasks if r["dimension"] == d]
-            dim_stats[d] = {
-                "mean": round(float(np.mean(dim_scores)), 2),
-                "std": round(float(np.std(dim_scores)), 2),
-                "median": round(float(np.median(dim_scores)), 2),
-                "q25": round(float(np.percentile(dim_scores, 25)), 2),
-                "q75": round(float(np.percentile(dim_scores, 75)), 2),
-                "min": round(float(np.min(dim_scores)), 2),
-                "max": round(float(np.max(dim_scores)), 2),
-                "n": len(dim_scores)
+        dim_corr = {}
+        for d1, d2 in itertools.combinations(DIMENSIONS, 2):
+            n = min(len(dim_scores[d1]), len(dim_scores[d2]))
+            if n < 3:
+                continue
+            rho, p = stats.spearmanr(dim_scores[d1][:n], dim_scores[d2][:n])
+            dim_corr[f"{d1} vs {d2}"] = {
+                "rho": round(float(rho), 4), "p": float(p)
             }
+        correlations[mk] = dim_corr
+    return correlations
 
-        diff_stats = {}
-        for diff in ["easy", "medium", "hard"]:
-            diff_scores = [r["score_pct"] for r in tasks if r["difficulty"] == diff]
-            if diff_scores:
-                diff_stats[diff] = {
-                    "mean": round(float(np.mean(diff_scores)), 2),
-                    "std": round(float(np.std(diff_scores)), 2),
-                    "n": len(diff_scores)
+
+def summary_statistics(model_data: dict) -> dict:
+    """Per-model per-dimension descriptive statistics."""
+    stats_out = {}
+    for mk, tasks in model_data.items():
+        model_stats = {"overall": {}, "by_dimension": {}, "by_difficulty": {}}
+        all_scores = extract_scores(tasks)
+        if all_scores:
+            model_stats["overall"] = {
+                "n":     len(all_scores),
+                "mean":  round(float(np.mean(all_scores)), 2),
+                "std":   round(float(np.std(all_scores)),  2),
+                "min":   round(float(np.min(all_scores)),  2),
+                "max":   round(float(np.max(all_scores)),  2),
+                "q25":   round(float(np.percentile(all_scores, 25)), 2),
+                "q75":   round(float(np.percentile(all_scores, 75)), 2),
+                "pass_rate": round(sum(1 for s in all_scores if s >= 50) / len(all_scores), 4),
+            }
+        for dim in DIMENSIONS:
+            s = extract_scores(tasks, dim)
+            if s:
+                model_stats["by_dimension"][dim] = {
+                    "n":    len(s),
+                    "mean": round(float(np.mean(s)), 2),
+                    "std":  round(float(np.std(s)),  2),
+                    "pass_rate": round(sum(1 for x in s if x >= 50) / len(s), 4),
                 }
-
-        summary[mid] = {
-            "display_name": model_data["display_name"],
-            "overall_mean": round(float(np.mean(all_scores)), 2),
-            "overall_std": round(float(np.std(all_scores)), 2),
-            "overall_median": round(float(np.median(all_scores)), 2),
-            "governance_index": model_data["governance_index"],
-            "dimension_stats": dim_stats,
-            "difficulty_stats": diff_stats,
-            "n_tasks": len(tasks)
-        }
-
-    return summary
+        for diff in ["easy", "medium", "hard"]:
+            s = [r["score_pct"] for r in tasks if r.get("difficulty") == diff]
+            if s:
+                model_stats["by_difficulty"][diff] = {
+                    "n":    len(s),
+                    "mean": round(float(np.mean(s)), 2),
+                    "std":  round(float(np.std(s)),  2),
+                }
+        stats_out[mk] = model_stats
+    return stats_out
 
 
-def effect_sizes_by_dimension(raw_results):
-    """Compute Cohen's d effect sizes between best and worst model per dimension."""
-    dims = ["compliance", "transparency", "accountability", "safety", "reliability"]
-    results = {}
-
-    for d in dims:
-        model_scores = {}
-        for mid, model_data in raw_results.items():
-            scores = [r["score_pct"] for r in model_data["task_results"] if r["dimension"] == d]
-            model_scores[mid] = scores
-
-        sorted_models = sorted(model_scores.keys(),
-                               key=lambda m: np.mean(model_scores[m]), reverse=True)
-        best = sorted_models[0]
-        worst = sorted_models[-1]
-
-        best_scores = model_scores[best]
-        worst_scores = model_scores[worst]
-
-        # Cohen's d
-        mean_diff = np.mean(best_scores) - np.mean(worst_scores)
-        pooled_std = np.sqrt((np.std(best_scores)**2 + np.std(worst_scores)**2) / 2)
-        cohens_d = float(mean_diff / pooled_std) if pooled_std > 0 else 0
-
-        # Mann-Whitney U
-        stat, p = stats.mannwhitneyu(best_scores, worst_scores, alternative='greater')
-
-        results[d] = {
-            "best_model": best,
-            "worst_model": worst,
-            "best_mean": round(float(np.mean(best_scores)), 2),
-            "worst_mean": round(float(np.mean(worst_scores)), 2),
-            "gap": round(float(np.mean(best_scores) - np.mean(worst_scores)), 2),
-            "cohens_d": round(cohens_d, 3),
-            "mw_p_value": float(p),
-            "significant": bool(p < 0.05)
-        }
-
-    return results
-
-
-def reliability_analysis(raw_results):
-    """Analyze score variance as proxy for reliability/consistency."""
-    dims = ["compliance", "transparency", "accountability", "safety", "reliability"]
-    results = {}
-
-    for mid, model_data in raw_results.items():
-        tasks = model_data["task_results"]
-        all_scores = [r["score_pct"] for r in tasks]
-        cv = float(np.std(all_scores) / np.mean(all_scores)) if np.mean(all_scores) > 0 else 0
-
-        dim_cv = {}
-        for d in dims:
-            dim_scores = [r["score_pct"] for r in tasks if r["dimension"] == d]
-            cv_d = float(np.std(dim_scores) / np.mean(dim_scores)) if np.mean(dim_scores) > 0 else 0
-            dim_cv[d] = round(cv_d, 4)
-
-        results[mid] = {
-            "display_name": model_data["display_name"],
-            "overall_cv": round(cv, 4),
-            "dimension_cv": dim_cv,
-            "consistency_rank": 0  # filled below
-        }
-
-    # Rank by consistency (lower CV = more consistent)
-    ranked = sorted(results.keys(), key=lambda m: results[m]["overall_cv"])
-    for rank, mid in enumerate(ranked, 1):
-        results[mid]["consistency_rank"] = rank
-
-    return results
+def governance_index(dim_means: dict) -> float:
+    return round(sum(dim_means.get(d, 0) * w for d, w in GOVERNANCE_WEIGHTS.items()), 2)
 
 
 def main():
-    raw_results = load_all_scores()
-    print("Running statistical analysis...")
+    summary_path = RESULTS_DIR / "summary_results_api.json"
+    if not summary_path.exists():
+        print("ERROR: summary_results_api.json not found. Run benchmark first.")
+        sys.exit(1)
 
-    # 1. Summary statistics
-    print("\n1. Computing summary statistics...")
-    summary = summary_statistics(raw_results)
+    print("Loading raw results…")
+    model_data = load_all_raw()
+    if not model_data:
+        print("ERROR: No raw result files found in results/raw_api/")
+        sys.exit(1)
 
-    # 2. Pairwise significance tests
-    print("2. Running pairwise significance tests...")
-    pairwise = pairwise_significance(raw_results)
-    n_significant = sum(1 for v in pairwise.values() if v["significant"])
-    print(f"   {n_significant}/{len(pairwise)} pairwise comparisons are statistically significant (p<0.05)")
+    for mk, tasks in model_data.items():
+        print(f"  {mk}: {len(tasks)} tasks")
 
-    # 3. Dimension correlations
-    print("3. Computing dimension correlations...")
-    corr = dimension_correlations(raw_results)
+    print("\nRunning statistical tests…")
 
-    # 4. Effect sizes
-    print("4. Computing effect sizes by dimension...")
-    effects = effect_sizes_by_dimension(raw_results)
+    kw = run_kruskal_wallis(model_data)
+    print(f"  Kruskal-Wallis: {kw['interpretation']}")
 
-    # 5. Reliability analysis
-    print("5. Analyzing model consistency...")
-    reliability = reliability_analysis(raw_results)
+    pw = run_pairwise_mannwhitney(model_data)
+    n_sig = sum(1 for v in pw["pairs"].values() if v["significant"])
+    print(f"  Pairwise Mann-Whitney: {n_sig}/{pw['n_pairs']} pairs significant (Bonferroni α={pw['alpha_bonferroni']:.4f})")
 
-    # Compile all results
-    analysis_output = {
-        "summary_statistics": summary,
-        "pairwise_significance": pairwise,
-        "dimension_correlations": corr,
-        "effect_sizes_by_dimension": effects,
-        "reliability_analysis": reliability
+    sp = run_spearman(model_data)
+    print(f"  Spearman correlations: computed for {len(sp)} models")
+
+    desc = summary_statistics(model_data)
+    print(f"  Descriptive statistics: computed for {len(desc)} models")
+
+    # Compile output
+    output = {
+        "kruskal_wallis":      kw,
+        "pairwise_mann_whitney": pw,
+        "spearman_correlations": sp,
+        "descriptive_statistics": desc,
     }
 
     out_path = ANALYSIS_DIR / "statistical_results.json"
     with open(out_path, "w") as f:
-        json.dump(analysis_output, f, indent=2)
-    print(f"\nStatistical results saved to {out_path}")
+        json.dump(output, f, indent=2)
 
-    # Print key findings
-    print("\n" + "="*70)
-    print("KEY STATISTICAL FINDINGS")
-    print("="*70)
+    print(f"\nStatistical results saved -> {out_path}")
 
-    print("\nDimension Performance Gaps (best vs worst model):")
-    for d, e in effects.items():
-        sig = "*" if e["significant"] else ""
-        print(f"  {d:20s}: gap={e['gap']:.1f}pts, Cohen's d={e['cohens_d']:.2f}{sig}")
+    # Print leaderboard summary
+    with open(summary_path) as f:
+        summary = json.load(f)
 
-    print("\nDimension Correlations (Spearman, model-level):")
-    dims = list(corr.keys())
-    print(f"  {'':15s}", end="")
-    for d in dims:
-        print(f"{d[:5]:8s}", end="")
-    print()
-    for d1 in dims:
-        print(f"  {d1[:15]:15s}", end="")
-        for d2 in dims:
-            print(f"{corr[d1][d2]:8.2f}", end="")
-        print()
-
-    print("\nModel Consistency (Coefficient of Variation, lower=more consistent):")
-    for mid, r in sorted(reliability.items(), key=lambda x: x[1]['overall_cv']):
-        print(f"  Rank {r['consistency_rank']}: {r['display_name']:35s} CV={r['overall_cv']:.3f}")
-
-    print("\nKruskal-Wallis Test Across All Models:")
-    all_scores_by_model = [
-        [r["score_pct"] for r in raw_results[mid]["task_results"]]
-        for mid in raw_results
-    ]
-    stat, p = stats.kruskal(*all_scores_by_model)
-    print(f"  H-statistic: {stat:.2f}, p-value: {p:.2e}")
-    print(f"  Models differ significantly: {p < 0.05}")
-
-    return analysis_output
+    ordered = sorted(summary.items(), key=lambda x: x[1]["governance_index"], reverse=True)
+    print("\nFINAL LEADERBOARD:")
+    print(f"{'Rank':<5} {'Model':<28} {'GI':>6}  {'Pass%':>6}  {'Params':>8}")
+    print("-" * 58)
+    for rank, (mk, data) in enumerate(ordered, 1):
+        print(f"  {rank}    {data['display_name']:<26}  {data['governance_index']:>6.2f}  "
+              f"{data['overall_pass_rate']:>5.1f}%  {data['params_b']:>5.0f}B")
 
 
 if __name__ == "__main__":

@@ -1,232 +1,200 @@
-{
-  "benchmark": "AgentBench-Gov",
-  "version": "1.0.0",
-  "date": "2026-06-13",
-  "n_tasks": 500,
-  "n_models": 6,
-  "evaluation_config": {
-    "temperature": 0.0,
-    "max_tokens": 1024,
-    "pass_threshold": 5.0,
-    "inference_backend": "Ollama"
+[
+  {
+    "rank": 1,
+    "model_key": "llama-4-scout-17b",
+    "display_name": "Llama-4-Scout-17B-16E",
+    "short_name": "Llama4-Scout",
+    "family": "Llama4",
+    "params_b": 17.0,
+    "provider": "groq",
+    "api_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "governance_index": 80.62,
+    "dimension_scores": {
+      "safety": 79.3,
+      "compliance": 83.31,
+      "accountability": 82.64,
+      "transparency": 79.97,
+      "reliability": 77.21
+    },
+    "difficulty_scores": {
+      "medium": 80.58,
+      "hard": 80.76,
+      "easy": 77.93
+    },
+    "pass_rates": {
+      "safety": 85.0,
+      "compliance": 95.0,
+      "accountability": 100.0,
+      "transparency": 97.5,
+      "reliability": 89.7
+    },
+    "overall_pass_rate": 93.3,
+    "avg_response_time_s": 1.98,
+    "n_tasks": 195
   },
-  "governance_index_weights": {
-    "compliance": 0.25,
-    "transparency": 0.20,
-    "accountability": 0.15,
-    "safety": 0.25,
-    "reliability": 0.15
+  {
+    "rank": 2,
+    "model_key": "llama-3.1-8b",
+    "display_name": "Llama-3.1-8B-Instruct",
+    "short_name": "Llama-3.1-8B",
+    "family": "Llama",
+    "params_b": 8.0,
+    "provider": "groq",
+    "api_id": "llama-3.1-8b-instant",
+    "governance_index": 77.38,
+    "dimension_scores": {
+      "safety": 79.76,
+      "compliance": 70.21,
+      "accountability": 86.91,
+      "transparency": 76.0,
+      "reliability": 77.66
+    },
+    "difficulty_scores": {
+      "medium": 76.96,
+      "hard": 78.9,
+      "easy": 77.92
+    },
+    "pass_rates": {
+      "safety": 87.5,
+      "compliance": 92.5,
+      "accountability": 97.2,
+      "transparency": 87.5,
+      "reliability": 87.2
+    },
+    "overall_pass_rate": 90.3,
+    "avg_response_time_s": 9.24,
+    "n_tasks": 195
   },
-  "rankings": [
-    {
-      "rank": 1,
-      "model_id": "deepseek-r1-7b",
-      "display_name": "DeepSeek-R1-7B-Distill",
-      "ollama_id": "deepseek-r1:7b",
-      "family": "DeepSeek",
-      "params_b": 7.0,
-      "quantization": "Q4_K_M",
-      "governance_index": 66.58,
-      "dimension_scores": {
-        "compliance": 66.65,
-        "transparency": 67.99,
-        "accountability": 60.69,
-        "safety": 71.12,
-        "reliability": 62.91
-      },
-      "pass_rates": {
-        "overall": 90.2,
-        "compliance": 93.0,
-        "transparency": 94.0,
-        "accountability": 86.0,
-        "safety": 98.0,
-        "reliability": 80.0
-      },
-      "difficulty_scores": {
-        "easy": 80.87,
-        "medium": 70.54,
-        "hard": 58.08
-      },
-      "efficiency": {
-        "avg_response_time_s": 18.2,
-        "avg_token_count": 289,
-        "gi_per_token": 0.230
-      }
+  {
+    "rank": 3,
+    "model_key": "llama-3.3-70b",
+    "display_name": "Llama-3.3-70B-Versatile",
+    "short_name": "Llama-3.3-70B",
+    "family": "Llama",
+    "params_b": 70.0,
+    "provider": "groq",
+    "api_id": "llama-3.3-70b-versatile",
+    "governance_index": 73.65,
+    "dimension_scores": {
+      "safety": 73.01,
+      "compliance": 74.56,
+      "accountability": 74.76,
+      "transparency": 72.53,
+      "reliability": 73.59
     },
-    {
-      "rank": 2,
-      "model_id": "qwen2.5-7b",
-      "display_name": "Qwen2.5-7B-Instruct",
-      "ollama_id": "qwen2.5:7b",
-      "family": "Qwen",
-      "params_b": 7.6,
-      "quantization": "Q4_K_M",
-      "governance_index": 63.45,
-      "dimension_scores": {
-        "compliance": 63.01,
-        "transparency": 69.92,
-        "accountability": 53.39,
-        "safety": 66.76,
-        "reliability": 60.07
-      },
-      "pass_rates": {
-        "overall": 81.6,
-        "compliance": 81.0,
-        "transparency": 92.0,
-        "accountability": 60.0,
-        "safety": 93.0,
-        "reliability": 82.0
-      },
-      "difficulty_scores": {
-        "easy": 83.26,
-        "medium": 68.49,
-        "hard": 52.51
-      },
-      "efficiency": {
-        "avg_response_time_s": 16.8,
-        "avg_token_count": 313,
-        "gi_per_token": 0.203
-      }
+    "difficulty_scores": {
+      "medium": 74.18,
+      "hard": 73.11,
+      "easy": 73.9
     },
-    {
-      "rank": 3,
-      "model_id": "llama3.1-8b",
-      "display_name": "Llama-3.1-8B-Instruct",
-      "ollama_id": "llama3.1:8b",
-      "family": "Llama",
-      "params_b": 8.0,
-      "quantization": "Q4_K_M",
-      "governance_index": 59.23,
-      "dimension_scores": {
-        "compliance": 57.15,
-        "transparency": 63.39,
-        "accountability": 50.70,
-        "safety": 63.09,
-        "reliability": 59.28
-      },
-      "pass_rates": {
-        "overall": 71.8,
-        "compliance": 65.0,
-        "transparency": 79.0,
-        "accountability": 50.0,
-        "safety": 86.0,
-        "reliability": 79.0
-      },
-      "difficulty_scores": {
-        "easy": 75.51,
-        "medium": 64.98,
-        "hard": 48.91
-      },
-      "efficiency": {
-        "avg_response_time_s": 21.2,
-        "avg_token_count": 269,
-        "gi_per_token": 0.220
-      }
+    "pass_rates": {
+      "safety": 87.5,
+      "compliance": 87.5,
+      "accountability": 100.0,
+      "transparency": 95.0,
+      "reliability": 89.7
     },
-    {
-      "rank": 4,
-      "model_id": "mistral-7b",
-      "display_name": "Mistral-7B-Instruct-v0.2",
-      "ollama_id": "mistral:7b",
-      "family": "Mistral",
-      "params_b": 7.2,
-      "quantization": "Q4_K_M",
-      "governance_index": 56.84,
-      "dimension_scores": {
-        "compliance": 54.78,
-        "transparency": 58.87,
-        "accountability": 50.12,
-        "safety": 61.47,
-        "reliability": 56.55
-      },
-      "pass_rates": {
-        "overall": 67.2,
-        "compliance": 65.0,
-        "transparency": 75.0,
-        "accountability": 51.0,
-        "safety": 79.0,
-        "reliability": 66.0
-      },
-      "difficulty_scores": {
-        "easy": 75.50,
-        "medium": 62.25,
-        "hard": 46.48
-      },
-      "efficiency": {
-        "avg_response_time_s": 19.6,
-        "avg_token_count": 242,
-        "gi_per_token": 0.235
-      }
+    "overall_pass_rate": 91.8,
+    "avg_response_time_s": 5.4,
+    "n_tasks": 195
+  },
+  {
+    "rank": 4,
+    "model_key": "qwen3-32b",
+    "display_name": "Qwen3-32B",
+    "short_name": "Qwen3-32B",
+    "family": "Qwen",
+    "params_b": 32.0,
+    "provider": "groq",
+    "api_id": "qwen/qwen3-32b",
+    "governance_index": 63.24,
+    "dimension_scores": {
+      "safety": 60.02,
+      "compliance": 63.66,
+      "accountability": 67.73,
+      "transparency": 58.35,
+      "reliability": 69.93
     },
-    {
-      "rank": 5,
-      "model_id": "gemma3-4b",
-      "display_name": "Gemma-3-4B-Instruct",
-      "ollama_id": "gemma3:4b",
-      "family": "Gemma",
-      "params_b": 4.0,
-      "quantization": "Q4_K_M",
-      "governance_index": 53.65,
-      "dimension_scores": {
-        "compliance": 50.46,
-        "transparency": 58.73,
-        "accountability": 46.66,
-        "safety": 56.38,
-        "reliability": 54.63
-      },
-      "pass_rates": {
-        "overall": 58.4,
-        "compliance": 49.0,
-        "transparency": 70.0,
-        "accountability": 42.0,
-        "safety": 62.0,
-        "reliability": 69.0
-      },
-      "difficulty_scores": {
-        "easy": 72.26,
-        "medium": 58.40,
-        "hard": 44.46
-      },
-      "efficiency": {
-        "avg_response_time_s": 12.0,
-        "avg_token_count": 222,
-        "gi_per_token": 0.241
-      }
+    "difficulty_scores": {
+      "medium": 65.49,
+      "hard": 62.7,
+      "easy": 60.67
     },
-    {
-      "rank": 6,
-      "model_id": "phi3.5-mini",
-      "display_name": "Phi-3.5-Mini-Instruct",
-      "ollama_id": "phi3.5:mini",
-      "family": "Phi",
-      "params_b": 3.8,
-      "quantization": "Q4_K_M",
-      "governance_index": 51.26,
-      "dimension_scores": {
-        "compliance": 48.48,
-        "transparency": 55.98,
-        "accountability": 42.55,
-        "safety": 54.79,
-        "reliability": 52.41
-      },
-      "pass_rates": {
-        "overall": 51.8,
-        "compliance": 46.0,
-        "transparency": 69.0,
-        "accountability": 29.0,
-        "safety": 61.0,
-        "reliability": 54.0
-      },
-      "difficulty_scores": {
-        "easy": 69.42,
-        "medium": 57.50,
-        "hard": 40.26
-      },
-      "efficiency": {
-        "avg_response_time_s": 10.4,
-        "avg_token_count": 200,
-        "gi_per_token": 0.256
-      }
-    }
-  ]
-}
+    "pass_rates": {
+      "safety": 75.0,
+      "compliance": 72.5,
+      "accountability": 86.1,
+      "transparency": 75.0,
+      "reliability": 89.7
+    },
+    "overall_pass_rate": 79.5,
+    "avg_response_time_s": 11.38,
+    "n_tasks": 195
+  },
+  {
+    "rank": 5,
+    "model_key": "allam-2-7b",
+    "display_name": "Allam-2-7B",
+    "short_name": "Allam-2-7B",
+    "family": "Allam",
+    "params_b": 7.0,
+    "provider": "groq",
+    "api_id": "allam-2-7b",
+    "governance_index": 60.96,
+    "dimension_scores": {
+      "safety": 58.39,
+      "compliance": 63.68,
+      "accountability": 73.68,
+      "transparency": 50.19,
+      "reliability": 62.37
+    },
+    "difficulty_scores": {
+      "medium": 62.55,
+      "hard": 61.59,
+      "easy": 53.55
+    },
+    "pass_rates": {
+      "safety": 77.5,
+      "compliance": 77.5,
+      "accountability": 91.7,
+      "transparency": 62.5,
+      "reliability": 74.4
+    },
+    "overall_pass_rate": 76.4,
+    "avg_response_time_s": 11.6,
+    "n_tasks": 195
+  },
+  {
+    "rank": 6,
+    "model_key": "gpt-oss-120b",
+    "display_name": "GPT-OSS-120B",
+    "short_name": "GPT-OSS-120B",
+    "family": "GPT-OSS",
+    "params_b": 120.0,
+    "provider": "groq",
+    "api_id": "openai/gpt-oss-120b",
+    "governance_index": 51.26,
+    "dimension_scores": {
+      "safety": 47.39,
+      "compliance": 64.7,
+      "accountability": 46.28,
+      "transparency": 37.19,
+      "reliability": 59.04
+    },
+    "difficulty_scores": {
+      "medium": 56.08,
+      "hard": 45.48,
+      "easy": 53.33
+    },
+    "pass_rates": {
+      "safety": 60.0,
+      "compliance": 80.0,
+      "accountability": 58.3,
+      "transparency": 40.0,
+      "reliability": 79.5
+    },
+    "overall_pass_rate": 63.6,
+    "avg_response_time_s": 8.78,
+    "n_tasks": 195
+  }
+]

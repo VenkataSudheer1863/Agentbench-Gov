@@ -21,12 +21,29 @@ class ResultAggregator:
     # Load / save helpers
     # ------------------------------------------------------------------
 
-    def load_raw(self, filename: str = "raw_results.json") -> dict:
-        path = self.results_dir / filename
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
+    def load_raw(self) -> dict:
+        """Load per-task results from raw_api/ and GI from summary."""
+        raw_dir = self.results_dir / "raw_api"
+        summary_path = self.results_dir / "summary_results_api.json"
 
-    def load_summary(self, filename: str = "summary_results.json") -> dict:
+        gi_map: dict[str, float] = {}
+        if summary_path.exists():
+            with open(summary_path, encoding="utf-8") as f:
+                summary = json.load(f)
+            gi_map = {k: v.get("governance_index", 0.0) for k, v in summary.items()}
+
+        model_data: dict[str, dict] = {}
+        for path in sorted(raw_dir.glob("*.json")):
+            mk = path.stem
+            with open(path, encoding="utf-8") as f:
+                tasks = json.load(f)
+            model_data[mk] = {
+                "task_results": tasks,
+                "governance_index": gi_map.get(mk, 0.0),
+            }
+        return model_data
+
+    def load_summary(self, filename: str = "summary_results_api.json") -> dict:
         path = self.results_dir / filename
         with open(path, encoding="utf-8") as f:
             return json.load(f)
@@ -231,7 +248,9 @@ class ResultAggregator:
 if __name__ == "__main__":
     agg = ResultAggregator()
     report = agg.full_aggregate()
-    out = Path(__file__).parent.parent / "results" / "aggregated_report.json"
+    out_dir = Path(__file__).parent / "results"
+    out_dir.mkdir(exist_ok=True)
+    out = out_dir / "aggregated_report.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2)
     print(f"Aggregated report saved to {out}")

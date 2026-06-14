@@ -1,0 +1,741 @@
+{
+  "kruskal_wallis": {
+    "H_statistic": 181.5322,
+    "p_value": 2.5187521394955673e-37,
+    "significant": true,
+    "interpretation": "H=181.53, p=2.52e-37 \u2014 Models differ significantly"
+  },
+  "pairwise_mann_whitney": {
+    "alpha_bonferroni": 0.0033333333333333335,
+    "n_pairs": 15,
+    "pairs": {
+      "allam-2-7b vs gpt-oss-120b": {
+        "U": 23078.5,
+        "p_value": 0.0002182041051486373,
+        "p_bonferroni": 0.0032730615772295596,
+        "significant": true,
+        "effect_r": 0.1872
+      },
+      "allam-2-7b vs llama-3.1-8b": {
+        "U": 11829.0,
+        "p_value": 5.379344862919329e-11,
+        "p_bonferroni": 8.069017294378993e-10,
+        "significant": true,
+        "effect_r": 0.3322
+      },
+      "allam-2-7b vs llama-3.3-70b": {
+        "U": 13522.0,
+        "p_value": 4.826284154740854e-07,
+        "p_bonferroni": 7.239426232111281e-06,
+        "significant": true,
+        "effect_r": 0.2549
+      },
+      "allam-2-7b vs llama-4-scout-17b": {
+        "U": 10486.5,
+        "p_value": 6.188590275441006e-15,
+        "p_bonferroni": 9.282885413161509e-14,
+        "significant": true,
+        "effect_r": 0.3949
+      },
+      "allam-2-7b vs qwen3-32b": {
+        "U": 18325.0,
+        "p_value": 0.5291234700848064,
+        "p_bonferroni": 7.936852051272096,
+        "significant": false,
+        "effect_r": 0.0319
+      },
+      "gpt-oss-120b vs llama-3.1-8b": {
+        "U": 8981.5,
+        "p_value": 6.889238583290019e-20,
+        "p_bonferroni": 1.0333857874935029e-18,
+        "significant": true,
+        "effect_r": Infinity
+      },
+      "gpt-oss-120b vs llama-3.3-70b": {
+        "U": 10180.5,
+        "p_value": 9.119685922425276e-16,
+        "p_bonferroni": 1.3679528883637914e-14,
+        "significant": true,
+        "effect_r": 0.4072
+      },
+      "gpt-oss-120b vs llama-4-scout-17b": {
+        "U": 7750.5,
+        "p_value": 1.3108166365971453e-24,
+        "p_bonferroni": 1.966224954895718e-23,
+        "significant": true,
+        "effect_r": Infinity
+      },
+      "gpt-oss-120b vs qwen3-32b": {
+        "U": 14210.0,
+        "p_value": 1.2902249774063853e-05,
+        "p_bonferroni": 0.00019353374661095778,
+        "significant": true,
+        "effect_r": 0.2209
+      },
+      "llama-3.1-8b vs llama-3.3-70b": {
+        "U": 21635.5,
+        "p_value": 0.015744420344229192,
+        "p_bonferroni": 0.2361663051634379,
+        "significant": false,
+        "effect_r": 0.1223
+      },
+      "llama-3.1-8b vs llama-4-scout-17b": {
+        "U": 18411.5,
+        "p_value": 0.5756176895490407,
+        "p_bonferroni": 8.63426534323561,
+        "significant": false,
+        "effect_r": 0.0283
+      },
+      "llama-3.1-8b vs qwen3-32b": {
+        "U": 25749.0,
+        "p_value": 7.659511447554498e-10,
+        "p_bonferroni": 1.1489267171331747e-08,
+        "significant": true,
+        "effect_r": 0.3115
+      },
+      "llama-3.3-70b vs llama-4-scout-17b": {
+        "U": 15478.0,
+        "p_value": 0.001128557348584934,
+        "p_bonferroni": 0.01692836022877401,
+        "significant": true,
+        "effect_r": 0.1649
+      },
+      "llama-3.3-70b vs qwen3-32b": {
+        "U": 24094.0,
+        "p_value": 3.130880540895395e-06,
+        "p_bonferroni": 4.6963208113430925e-05,
+        "significant": true,
+        "effect_r": 0.2361
+      },
+      "llama-4-scout-17b vs qwen3-32b": {
+        "U": 27151.0,
+        "p_value": 9.154864784042009e-14,
+        "p_bonferroni": 1.3732297176063015e-12,
+        "significant": true,
+        "effect_r": 0.3774
+      }
+    }
+  },
+  "spearman_correlations": {
+    "allam-2-7b": {
+      "compliance vs transparency": {
+        "rho": -0.0992,
+        "p": 0.5426254665023531
+      },
+      "compliance vs accountability": {
+        "rho": -0.1124,
+        "p": 0.5138923907419923
+      },
+      "compliance vs safety": {
+        "rho": -0.0593,
+        "p": 0.7163160514715724
+      },
+      "compliance vs reliability": {
+        "rho": -0.06,
+        "p": 0.7165882241713591
+      },
+      "transparency vs accountability": {
+        "rho": 0.0057,
+        "p": 0.9736906995208073
+      },
+      "transparency vs safety": {
+        "rho": 0.0689,
+        "p": 0.6726804232767234
+      },
+      "transparency vs reliability": {
+        "rho": 0.2587,
+        "p": 0.11173625339125984
+      },
+      "accountability vs safety": {
+        "rho": 0.2109,
+        "p": 0.2169644274044809
+      },
+      "accountability vs reliability": {
+        "rho": -0.2101,
+        "p": 0.2186468362058658
+      },
+      "safety vs reliability": {
+        "rho": -0.1642,
+        "p": 0.31772702730515445
+      }
+    },
+    "gpt-oss-120b": {
+      "compliance vs transparency": {
+        "rho": -0.0964,
+        "p": 0.5538395489297775
+      },
+      "compliance vs accountability": {
+        "rho": 0.0308,
+        "p": 0.8583463069253187
+      },
+      "compliance vs safety": {
+        "rho": 0.198,
+        "p": 0.22064084761240405
+      },
+      "compliance vs reliability": {
+        "rho": 0.0812,
+        "p": 0.6229500693002415
+      },
+      "transparency vs accountability": {
+        "rho": 0.0598,
+        "p": 0.7291218874599291
+      },
+      "transparency vs safety": {
+        "rho": -0.0776,
+        "p": 0.6339449515836723
+      },
+      "transparency vs reliability": {
+        "rho": -0.4083,
+        "p": 0.009869688028725569
+      },
+      "accountability vs safety": {
+        "rho": -0.2084,
+        "p": 0.22251215533026958
+      },
+      "accountability vs reliability": {
+        "rho": -0.1045,
+        "p": 0.5440321484888194
+      },
+      "safety vs reliability": {
+        "rho": 0.1963,
+        "p": 0.23096625696583972
+      }
+    },
+    "llama-3.1-8b": {
+      "compliance vs transparency": {
+        "rho": -0.0435,
+        "p": 0.7899073388682113
+      },
+      "compliance vs accountability": {
+        "rho": 0.2455,
+        "p": 0.1489150353683124
+      },
+      "compliance vs safety": {
+        "rho": 0.034,
+        "p": 0.834952042295244
+      },
+      "compliance vs reliability": {
+        "rho": 0.0333,
+        "p": 0.840304560535147
+      },
+      "transparency vs accountability": {
+        "rho": 0.0081,
+        "p": 0.9625985803985324
+      },
+      "transparency vs safety": {
+        "rho": -0.1343,
+        "p": 0.4086935129559145
+      },
+      "transparency vs reliability": {
+        "rho": 0.0357,
+        "p": 0.8290944468059285
+      },
+      "accountability vs safety": {
+        "rho": -0.232,
+        "p": 0.17343965458016336
+      },
+      "accountability vs reliability": {
+        "rho": 0.2656,
+        "p": 0.11749134359258166
+      },
+      "safety vs reliability": {
+        "rho": -0.1281,
+        "p": 0.43693892576945564
+      }
+    },
+    "llama-3.3-70b": {
+      "compliance vs transparency": {
+        "rho": -0.0749,
+        "p": 0.6459878951524578
+      },
+      "compliance vs accountability": {
+        "rho": -0.176,
+        "p": 0.3045007406895617
+      },
+      "compliance vs safety": {
+        "rho": -0.2044,
+        "p": 0.20570359541933106
+      },
+      "compliance vs reliability": {
+        "rho": -0.0738,
+        "p": 0.6550533560418454
+      },
+      "transparency vs accountability": {
+        "rho": 0.0136,
+        "p": 0.9374373949184247
+      },
+      "transparency vs safety": {
+        "rho": 0.2765,
+        "p": 0.08419273706179072
+      },
+      "transparency vs reliability": {
+        "rho": 0.0933,
+        "p": 0.572257071881783
+      },
+      "accountability vs safety": {
+        "rho": -0.0742,
+        "p": 0.6671986467059157
+      },
+      "accountability vs reliability": {
+        "rho": -0.0581,
+        "p": 0.7364621964868686
+      },
+      "safety vs reliability": {
+        "rho": 0.2026,
+        "p": 0.21604721637267982
+      }
+    },
+    "llama-4-scout-17b": {
+      "compliance vs transparency": {
+        "rho": 0.1512,
+        "p": 0.3517972822908261
+      },
+      "compliance vs accountability": {
+        "rho": 0.296,
+        "p": 0.07964169212565607
+      },
+      "compliance vs safety": {
+        "rho": -0.2612,
+        "p": 0.1035002647682078
+      },
+      "compliance vs reliability": {
+        "rho": -0.1515,
+        "p": 0.357224587186105
+      },
+      "transparency vs accountability": {
+        "rho": -0.0395,
+        "p": 0.81898826409307
+      },
+      "transparency vs safety": {
+        "rho": 0.0064,
+        "p": 0.968862607805108
+      },
+      "transparency vs reliability": {
+        "rho": -0.1882,
+        "p": 0.25130856656455514
+      },
+      "accountability vs safety": {
+        "rho": 0.2174,
+        "p": 0.20280407578015722
+      },
+      "accountability vs reliability": {
+        "rho": 0.123,
+        "p": 0.47463248811776737
+      },
+      "safety vs reliability": {
+        "rho": 0.1919,
+        "p": 0.24178965494010435
+      }
+    },
+    "qwen3-32b": {
+      "compliance vs transparency": {
+        "rho": 0.1254,
+        "p": 0.4407945084702443
+      },
+      "compliance vs accountability": {
+        "rho": -0.1627,
+        "p": 0.3430458220341485
+      },
+      "compliance vs safety": {
+        "rho": 0.2703,
+        "p": 0.09157938273505428
+      },
+      "compliance vs reliability": {
+        "rho": 0.0252,
+        "p": 0.8788682441168068
+      },
+      "transparency vs accountability": {
+        "rho": 0.02,
+        "p": 0.9079332507753133
+      },
+      "transparency vs safety": {
+        "rho": -0.01,
+        "p": 0.9511507727394921
+      },
+      "transparency vs reliability": {
+        "rho": 0.2683,
+        "p": 0.09860855635346148
+      },
+      "accountability vs safety": {
+        "rho": -0.0686,
+        "p": 0.6911698667325897
+      },
+      "accountability vs reliability": {
+        "rho": 0.1191,
+        "p": 0.4891198072980701
+      },
+      "safety vs reliability": {
+        "rho": -0.0414,
+        "p": 0.8023185970447254
+      }
+    }
+  },
+  "descriptive_statistics": {
+    "allam-2-7b": {
+      "overall": {
+        "n": 195,
+        "mean": 61.41,
+        "std": 24.65,
+        "min": 0.0,
+        "max": 100.0,
+        "q25": 52.5,
+        "q75": 78.75,
+        "pass_rate": 0.7641
+      },
+      "by_dimension": {
+        "compliance": {
+          "n": 40,
+          "mean": 63.68,
+          "std": 23.97,
+          "pass_rate": 0.775
+        },
+        "transparency": {
+          "n": 40,
+          "mean": 50.19,
+          "std": 24.15,
+          "pass_rate": 0.625
+        },
+        "accountability": {
+          "n": 36,
+          "mean": 73.68,
+          "std": 19.48,
+          "pass_rate": 0.9167
+        },
+        "safety": {
+          "n": 40,
+          "mean": 58.39,
+          "std": 24.48,
+          "pass_rate": 0.775
+        },
+        "reliability": {
+          "n": 39,
+          "mean": 62.37,
+          "std": 24.52,
+          "pass_rate": 0.7436
+        }
+      },
+      "by_difficulty": {
+        "easy": {
+          "n": 15,
+          "mean": 53.55,
+          "std": 22.44
+        },
+        "medium": {
+          "n": 90,
+          "mean": 62.55,
+          "std": 24.21
+        },
+        "hard": {
+          "n": 90,
+          "mean": 61.59,
+          "std": 25.19
+        }
+      }
+    },
+    "gpt-oss-120b": {
+      "overall": {
+        "n": 195,
+        "mean": 50.98,
+        "std": 28.36,
+        "min": 0.0,
+        "max": 100.0,
+        "q25": 26.25,
+        "q75": 78.75,
+        "pass_rate": 0.6359
+      },
+      "by_dimension": {
+        "compliance": {
+          "n": 40,
+          "mean": 64.7,
+          "std": 26.98,
+          "pass_rate": 0.8
+        },
+        "transparency": {
+          "n": 40,
+          "mean": 37.19,
+          "std": 25.11,
+          "pass_rate": 0.4
+        },
+        "accountability": {
+          "n": 36,
+          "mean": 46.28,
+          "std": 27.97,
+          "pass_rate": 0.5833
+        },
+        "safety": {
+          "n": 40,
+          "mean": 47.39,
+          "std": 27.1,
+          "pass_rate": 0.6
+        },
+        "reliability": {
+          "n": 39,
+          "mean": 59.04,
+          "std": 25.83,
+          "pass_rate": 0.7949
+        }
+      },
+      "by_difficulty": {
+        "easy": {
+          "n": 15,
+          "mean": 53.33,
+          "std": 26.22
+        },
+        "medium": {
+          "n": 90,
+          "mean": 56.08,
+          "std": 25.18
+        },
+        "hard": {
+          "n": 90,
+          "mean": 45.48,
+          "std": 30.62
+        }
+      }
+    },
+    "llama-3.1-8b": {
+      "overall": {
+        "n": 195,
+        "mean": 77.93,
+        "std": 23.53,
+        "min": 17.5,
+        "max": 100.0,
+        "q25": 57.75,
+        "q75": 100.0,
+        "pass_rate": 0.9026
+      },
+      "by_dimension": {
+        "compliance": {
+          "n": 40,
+          "mean": 70.21,
+          "std": 18.17,
+          "pass_rate": 0.925
+        },
+        "transparency": {
+          "n": 40,
+          "mean": 76.0,
+          "std": 24.02,
+          "pass_rate": 0.875
+        },
+        "accountability": {
+          "n": 36,
+          "mean": 86.91,
+          "std": 18.88,
+          "pass_rate": 0.9722
+        },
+        "safety": {
+          "n": 40,
+          "mean": 79.76,
+          "std": 24.57,
+          "pass_rate": 0.875
+        },
+        "reliability": {
+          "n": 39,
+          "mean": 77.66,
+          "std": 27.33,
+          "pass_rate": 0.8718
+        }
+      },
+      "by_difficulty": {
+        "easy": {
+          "n": 15,
+          "mean": 77.92,
+          "std": 22.94
+        },
+        "medium": {
+          "n": 90,
+          "mean": 76.96,
+          "std": 24.64
+        },
+        "hard": {
+          "n": 90,
+          "mean": 78.9,
+          "std": 22.43
+        }
+      }
+    },
+    "llama-3.3-70b": {
+      "overall": {
+        "n": 195,
+        "mean": 73.67,
+        "std": 20.85,
+        "min": 17.5,
+        "max": 100.0,
+        "q25": 52.5,
+        "q75": 87.5,
+        "pass_rate": 0.9179
+      },
+      "by_dimension": {
+        "compliance": {
+          "n": 40,
+          "mean": 74.56,
+          "std": 22.01,
+          "pass_rate": 0.875
+        },
+        "transparency": {
+          "n": 40,
+          "mean": 72.53,
+          "std": 19.38,
+          "pass_rate": 0.95
+        },
+        "accountability": {
+          "n": 36,
+          "mean": 74.76,
+          "std": 16.81,
+          "pass_rate": 1.0
+        },
+        "safety": {
+          "n": 40,
+          "mean": 73.01,
+          "std": 23.56,
+          "pass_rate": 0.875
+        },
+        "reliability": {
+          "n": 39,
+          "mean": 73.59,
+          "std": 21.42,
+          "pass_rate": 0.8974
+        }
+      },
+      "by_difficulty": {
+        "easy": {
+          "n": 15,
+          "mean": 73.9,
+          "std": 20.21
+        },
+        "medium": {
+          "n": 90,
+          "mean": 74.18,
+          "std": 19.57
+        },
+        "hard": {
+          "n": 90,
+          "mean": 73.11,
+          "std": 22.15
+        }
+      }
+    },
+    "llama-4-scout-17b": {
+      "overall": {
+        "n": 195,
+        "mean": 80.46,
+        "std": 19.7,
+        "min": 17.5,
+        "max": 100.0,
+        "q25": 70.0,
+        "q75": 100.0,
+        "pass_rate": 0.9333
+      },
+      "by_dimension": {
+        "compliance": {
+          "n": 40,
+          "mean": 83.31,
+          "std": 16.74,
+          "pass_rate": 0.95
+        },
+        "transparency": {
+          "n": 40,
+          "mean": 79.97,
+          "std": 18.03,
+          "pass_rate": 0.975
+        },
+        "accountability": {
+          "n": 36,
+          "mean": 82.64,
+          "std": 16.97,
+          "pass_rate": 1.0
+        },
+        "safety": {
+          "n": 40,
+          "mean": 79.3,
+          "std": 24.15,
+          "pass_rate": 0.85
+        },
+        "reliability": {
+          "n": 39,
+          "mean": 77.21,
+          "std": 20.76,
+          "pass_rate": 0.8974
+        }
+      },
+      "by_difficulty": {
+        "easy": {
+          "n": 15,
+          "mean": 77.93,
+          "std": 24.79
+        },
+        "medium": {
+          "n": 90,
+          "mean": 80.58,
+          "std": 17.73
+        },
+        "hard": {
+          "n": 90,
+          "mean": 80.76,
+          "std": 20.57
+        }
+      }
+    },
+    "qwen3-32b": {
+      "overall": {
+        "n": 195,
+        "mean": 63.83,
+        "std": 22.66,
+        "min": 0.0,
+        "max": 100.0,
+        "q25": 52.5,
+        "q75": 78.75,
+        "pass_rate": 0.7949
+      },
+      "by_dimension": {
+        "compliance": {
+          "n": 40,
+          "mean": 63.66,
+          "std": 26.82,
+          "pass_rate": 0.725
+        },
+        "transparency": {
+          "n": 40,
+          "mean": 58.35,
+          "std": 24.16,
+          "pass_rate": 0.75
+        },
+        "accountability": {
+          "n": 36,
+          "mean": 67.73,
+          "std": 20.39,
+          "pass_rate": 0.8611
+        },
+        "safety": {
+          "n": 40,
+          "mean": 60.02,
+          "std": 20.19,
+          "pass_rate": 0.75
+        },
+        "reliability": {
+          "n": 39,
+          "mean": 69.93,
+          "std": 18.24,
+          "pass_rate": 0.8974
+        }
+      },
+      "by_difficulty": {
+        "easy": {
+          "n": 15,
+          "mean": 60.67,
+          "std": 24.78
+        },
+        "medium": {
+          "n": 90,
+          "mean": 65.49,
+          "std": 21.42
+        },
+        "hard": {
+          "n": 90,
+          "mean": 62.7,
+          "std": 23.36
+        }
+      }
+    }
+  }
+}

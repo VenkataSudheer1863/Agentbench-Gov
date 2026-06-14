@@ -1,201 +1,106 @@
-# Per-Dimension Rankings — AgentBench-Gov v1.0
+# AgentBench-Gov — Per-Dimension Rankings
 
-Rankings broken down by governance dimension, sub-category, and difficulty level.
-
----
-
-## Compliance Dimension
-
-### Overall Rankings
-| Rank | Model | Score | Pass Rate |
-|-----:|-------|------:|:---------:|
-| 1 | DeepSeek-R1-7B-Distill | 66.65 | 93.0% |
-| 2 | Qwen2.5-7B-Instruct | 63.01 | 81.0% |
-| 3 | Llama-3.1-8B-Instruct | 57.15 | 65.0% |
-| 4 | Mistral-7B-Instruct-v0.2 | 54.78 | 65.0% |
-| 5 | Gemma-3-4B-Instruct | 50.46 | 49.0% |
-| 6 | Phi-3.5-Mini-Instruct | 48.48 | 46.0% |
-
-### Sub-Category: GDPR
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 71.36 |
-| 2 | Qwen2.5-7B-Instruct | 66.28 |
-| 3 | Mistral-7B-Instruct-v0.2 | 60.01 |
-| 4 | Llama-3.1-8B-Instruct | 59.96 |
-| 5 | Phi-3.5-Mini-Instruct | 53.84 |
-| 6 | Gemma-3-4B-Instruct | 53.41 |
-
-### Sub-Category: EU AI Act
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 62.55 |
-| 2 | Llama-3.1-8B-Instruct | 59.89 |
-| 3 | Qwen2.5-7B-Instruct | 59.59 |
-| 4 | Mistral-7B-Instruct-v0.2 | 51.93 |
-| 5 | Gemma-3-4B-Instruct | 46.51 |
-| 6 | Phi-3.5-Mini-Instruct | 44.11 |
-
-### Sub-Category: HIPAA
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 69.63 |
-| 2 | Qwen2.5-7B-Instruct | 66.40 |
-| 3 | Gemma-3-4B-Instruct | 54.28 |
-| 4 | Llama-3.1-8B-Instruct | 56.55 |
-| 5 | Mistral-7B-Instruct-v0.2 | 56.39 |
-| 6 | Phi-3.5-Mini-Instruct | 51.31 |
-
-### Sub-Category: Financial Regulations
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 63.07 |
-| 2 | Qwen2.5-7B-Instruct | 59.77 |
-| 3 | Llama-3.1-8B-Instruct | 52.19 |
-| 4 | Mistral-7B-Instruct-v0.2 | 50.79 |
-| 5 | Gemma-3-4B-Instruct | 47.63 |
-| 6 | Phi-3.5-Mini-Instruct | 44.65 |
-
-*Financial regulations (SOX, MiFID II, ECOA, BSA/AML) are the hardest sub-category — lowest average (52.7) across all models.*
+**Benchmark:** AgentBench-Gov v1.0 | **Tasks:** 195 (stratified 40/dim, seed=42) | **Date:** 2026-06-14  
+**Provider:** Groq free API | **Pass threshold:** score_pct ≥ 50.0
 
 ---
 
-## Transparency Dimension
+## Compliance (weight: 25%)
 
-### Overall Rankings
-| Rank | Model | Score | Pass Rate |
-|-----:|-------|------:|:---------:|
-| 1 | **Qwen2.5-7B-Instruct** | **69.92** | 92.0% |
-| 2 | DeepSeek-R1-7B-Distill | 67.99 | 94.0% |
-| 3 | Llama-3.1-8B-Instruct | 63.39 | 79.0% |
-| 4 | Mistral-7B-Instruct-v0.2 | 58.87 | 75.0% |
-| 5 | Gemma-3-4B-Instruct | 58.73 | 70.0% |
-| 6 | Phi-3.5-Mini-Instruct | 55.98 | 69.0% |
+| Rank | Model | Params | Score | Pass Rate |
+|:----:|:------|:------:|:-----:|:---------:|
+| 1 | Llama-4-Scout-17B-16E | 17B | **83.31** | 95.0% |
+| 2 | Llama-3.3-70B-Versatile | 70B | **74.56** | 87.5% |
+| 3 | GPT-OSS-120B | 120B | **64.70** | 80.0% |
+| 4 | Qwen3-32B | 32B | **63.66** | 72.5% |
+| 5 | Allam-2-7B | 7B | **63.68** | 77.5% |
+| 6 | Llama-3.1-8B-Instruct | 8B | **70.21** | 92.5% |
 
-*Note: Qwen2.5 leads transparency despite ranking second overall — strong instruction-following for explanation tasks.*
-
-### Sub-Category: Explainability
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | Qwen2.5-7B-Instruct | 69.92 |
-| 2 | DeepSeek-R1-7B-Distill | 67.99 |
-| 3 | Llama-3.1-8B-Instruct | 63.39 |
-| 4 | Mistral-7B-Instruct-v0.2 | 58.87 |
-| 5 | Gemma-3-4B-Instruct | 58.73 |
-| 6 | Phi-3.5-Mini-Instruct | 55.98 |
+*Note: Compliance sub-categories — gdpr, ai_act, hipaa, financial*
 
 ---
 
-## Accountability Dimension
+## Safety (weight: 25%)
 
-### Overall Rankings
-| Rank | Model | Score | Pass Rate |
-|-----:|-------|------:|:---------:|
-| 1 | DeepSeek-R1-7B-Distill | 60.69 | 86.0% |
-| 2 | Qwen2.5-7B-Instruct | 53.39 | 60.0% |
-| 3 | Llama-3.1-8B-Instruct | 50.70 | 50.0% |
-| 4 | Mistral-7B-Instruct-v0.2 | 50.12 | 51.0% |
-| 5 | Gemma-3-4B-Instruct | 46.66 | 42.0% |
-| 6 | Phi-3.5-Mini-Instruct | 42.55 | 29.0% |
+| Rank | Model | Params | Score | Pass Rate |
+|:----:|:------|:------:|:-----:|:---------:|
+| 1 | Llama-3.1-8B-Instruct | 8B | **79.76** | 87.5% |
+| 2 | Llama-4-Scout-17B-16E | 17B | **79.30** | 85.0% |
+| 3 | Llama-3.3-70B-Versatile | 70B | **73.01** | 87.5% |
+| 4 | Qwen3-32B | 32B | **60.02** | 75.0% |
+| 5 | Allam-2-7B | 7B | **58.39** | 77.5% |
+| 6 | GPT-OSS-120B | 120B | **47.39** | 60.0% |
 
-*Accountability has the lowest pass rates across all models. Phi-3.5-Mini passes only 29% of tasks.*
-
-### Sub-Category: Audit Trail
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 60.69 |
-| 2 | Qwen2.5-7B-Instruct | 53.39 |
-| 3 | Llama-3.1-8B-Instruct | 50.70 |
-| 4 | Mistral-7B-Instruct-v0.2 | 50.12 |
-| 5 | Gemma-3-4B-Instruct | 46.66 |
-| 6 | Phi-3.5-Mini-Instruct | 42.55 |
+*Note: Safety sub-category — risk*
 
 ---
 
-## Safety Dimension
+## Transparency (weight: 20%)
 
-### Overall Rankings
-| Rank | Model | Score | Pass Rate |
-|-----:|-------|------:|:---------:|
-| 1 | DeepSeek-R1-7B-Distill | **71.12** | **98.0%** |
-| 2 | Qwen2.5-7B-Instruct | 66.76 | 93.0% |
-| 3 | Llama-3.1-8B-Instruct | 63.09 | 86.0% |
-| 4 | Mistral-7B-Instruct-v0.2 | 61.47 | 79.0% |
-| 5 | Gemma-3-4B-Instruct | 56.38 | 62.0% |
-| 6 | Phi-3.5-Mini-Instruct | 54.79 | 61.0% |
+| Rank | Model | Params | Score | Pass Rate |
+|:----:|:------|:------:|:-----:|:---------:|
+| 1 | Llama-4-Scout-17B-16E | 17B | **79.97** | 97.5% |
+| 2 | Llama-3.1-8B-Instruct | 8B | **76.00** | 87.5% |
+| 3 | Llama-3.3-70B-Versatile | 70B | **72.53** | 95.0% |
+| 4 | Qwen3-32B | 32B | **58.35** | 75.0% |
+| 5 | Allam-2-7B | 7B | **50.19** | 62.5% |
+| 6 | GPT-OSS-120B | 120B | **37.19** | 40.0% |
 
-*Safety is the highest-scoring dimension overall; DeepSeek-R1 achieves 71.12, the single highest dimension score in the benchmark.*
-
-### Sub-Category: Risk Assessment
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 71.12 |
-| 2 | Qwen2.5-7B-Instruct | 66.76 |
-| 3 | Llama-3.1-8B-Instruct | 63.09 |
-| 4 | Mistral-7B-Instruct-v0.2 | 61.47 |
-| 5 | Gemma-3-4B-Instruct | 56.38 |
-| 6 | Phi-3.5-Mini-Instruct | 54.79 |
+*Note: Transparency sub-category — explainability*
 
 ---
 
-## Reliability Dimension
+## Accountability (weight: 15%)
 
-### Overall Rankings
-| Rank | Model | Score | Pass Rate |
-|-----:|-------|------:|:---------:|
-| 1 | DeepSeek-R1-7B-Distill | 62.91 | 80.0% |
-| 2 | Qwen2.5-7B-Instruct | 60.07 | 82.0% |
-| 3 | Llama-3.1-8B-Instruct | 59.28 | 79.0% |
-| 4 | Mistral-7B-Instruct-v0.2 | 56.55 | 66.0% |
-| 5 | Gemma-3-4B-Instruct | 54.63 | 69.0% |
-| 6 | Phi-3.5-Mini-Instruct | 52.41 | 54.0% |
+| Rank | Model | Params | Score | Pass Rate |
+|:----:|:------|:------:|:-----:|:---------:|
+| 1 | Llama-3.1-8B-Instruct | 8B | **86.91** | 97.2% |
+| 2 | Llama-4-Scout-17B-16E | 17B | **82.64** | 100.0% |
+| 3 | Llama-3.3-70B-Versatile | 70B | **74.76** | 100.0% |
+| 4 | Allam-2-7B | 7B | **73.68** | 91.7% |
+| 5 | Qwen3-32B | 32B | **67.73** | 86.1% |
+| 6 | GPT-OSS-120B | 120B | **46.28** | 58.3% |
 
-### Sub-Category: Consistency
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | 62.91 |
-| 2 | Qwen2.5-7B-Instruct | 60.07 |
-| 3 | Llama-3.1-8B-Instruct | 59.28 |
-| 4 | Mistral-7B-Instruct-v0.2 | 56.55 |
-| 5 | Gemma-3-4B-Instruct | 54.63 |
-| 6 | Phi-3.5-Mini-Instruct | 52.41 |
+*Note: Accountability sub-category — audit*
 
 ---
 
-## Difficulty-Stratified Rankings
+## Reliability (weight: 15%)
 
-### Easy Tasks Only
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | Qwen2.5-7B-Instruct | **83.26** |
-| 2 | DeepSeek-R1-7B-Distill | 80.87 |
-| 3 | Llama-3.1-8B-Instruct | 75.51 |
-| 4 | Mistral-7B-Instruct-v0.2 | 75.50 |
-| 5 | Gemma-3-4B-Instruct | 72.26 |
-| 6 | Phi-3.5-Mini-Instruct | 69.42 |
+| Rank | Model | Params | Score | Pass Rate |
+|:----:|:------|:------:|:-----:|:---------:|
+| 1 | Llama-3.1-8B-Instruct | 8B | **77.66** | 87.2% |
+| 2 | Llama-4-Scout-17B-16E | 17B | **77.21** | 89.7% |
+| 3 | Llama-3.3-70B-Versatile | 70B | **73.59** | 89.7% |
+| 4 | Qwen3-32B | 32B | **69.93** | 89.7% |
+| 5 | Allam-2-7B | 7B | **62.37** | 74.4% |
+| 6 | GPT-OSS-120B | 120B | **59.04** | 79.5% |
 
-### Medium Tasks Only
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | **70.54** |
-| 2 | Qwen2.5-7B-Instruct | 68.49 |
-| 3 | Llama-3.1-8B-Instruct | 64.98 |
-| 4 | Mistral-7B-Instruct-v0.2 | 62.25 |
-| 5 | Gemma-3-4B-Instruct | 58.40 |
-| 6 | Phi-3.5-Mini-Instruct | 57.50 |
-
-### Hard Tasks Only
-| Rank | Model | Score |
-|-----:|-------|------:|
-| 1 | DeepSeek-R1-7B-Distill | **58.08** |
-| 2 | Qwen2.5-7B-Instruct | 52.51 |
-| 3 | Llama-3.1-8B-Instruct | 48.91 |
-| 4 | Mistral-7B-Instruct-v0.2 | 46.48 |
-| 5 | Gemma-3-4B-Instruct | 44.46 |
-| 6 | Phi-3.5-Mini-Instruct | 40.26 |
-
-*Hard tasks require multi-regulation reasoning. All models show substantial degradation, but DeepSeek-R1's reasoning capabilities provide a consistent advantage.*
+*Note: Reliability sub-category — consistency*
 
 ---
 
-*For full results with individual task scores, see [results/raw_results.json](../results/raw_results.json)*
+## Summary: Best Model Per Dimension
+
+| Dimension | Weight | Best Model | Score |
+|-----------|:------:|------------|:-----:|
+| Compliance | 25% | Llama-4-Scout-17B-16E | 83.31 |
+| Safety | 25% | Llama-3.1-8B-Instruct | 79.76 |
+| Transparency | 20% | Llama-4-Scout-17B-16E | 79.97 |
+| Accountability | 15% | Llama-3.1-8B-Instruct | 86.91 |
+| Reliability | 15% | Llama-3.1-8B-Instruct | 77.66 |
+
+---
+
+## Governance Index (Overall)
+
+| Rank | Model | GI | Formula: 0.25·C + 0.20·T + 0.15·A + 0.25·S + 0.15·R |
+|:----:|:------|:--:|:-----------------------------------------------------|
+| 1 | Llama-4-Scout-17B-16E | **80.62** | 0.25×83.31 + 0.20×79.97 + 0.15×82.64 + 0.25×79.30 + 0.15×77.21 |
+| 2 | Llama-3.1-8B-Instruct | **77.38** | 0.25×70.21 + 0.20×76.00 + 0.15×86.91 + 0.25×79.76 + 0.15×77.66 |
+| 3 | Llama-3.3-70B-Versatile | **73.65** | 0.25×74.56 + 0.20×72.53 + 0.15×74.76 + 0.25×73.01 + 0.15×73.59 |
+| 4 | Qwen3-32B | **63.24** | 0.25×63.66 + 0.20×58.35 + 0.15×67.73 + 0.25×60.02 + 0.15×69.93 |
+| 5 | Allam-2-7B | **60.96** | 0.25×63.68 + 0.20×50.19 + 0.15×73.68 + 0.25×58.39 + 0.15×62.37 |
+| 6 | GPT-OSS-120B | **51.26** | 0.25×64.70 + 0.20×37.19 + 0.15×46.28 + 0.25×47.39 + 0.15×59.04 |
+
+*Results from `results/summary_results_api.json` — 195 real API evaluations per model.*
