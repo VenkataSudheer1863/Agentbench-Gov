@@ -1,0 +1,278 @@
+{
+    "llama-4-scout-17b":  {
+                              "overall_mean_pct":  78.34,
+                              "display_name":  "Llama-4-Scout-17B-16E",
+                              "governance_index":  77.5,
+                              "n_passed":  126,
+                              "difficulty_scores":  {
+                                                        "easy":  71.15,
+                                                        "hard":  77.06,
+                                                        "medium":  80.5
+                                                    },
+                              "overall_std_pct":  20.72,
+                              "n_tasks":  139,
+                              "family":  "Llama4",
+                              "api_id":  "meta-llama/llama-4-scout-17b-16e-instruct",
+                              "params_b":  17,
+                              "n_failed":  13,
+                              "pass_rates":  {
+                                                 "accountability":  100,
+                                                 "compliance":  95,
+                                                 "transparency":  95.7,
+                                                 "safety":  76.9,
+                                                 "reliability":  83.3
+                                             },
+                              "avg_response_time_s":  1.98,
+                              "avg_response_words":  592.1,
+                              "overall_pass_rate":  90.6,
+                              "dimension_scores":  {
+                                                       "accountability":  85.53,
+                                                       "compliance":  83.31,
+                                                       "transparency":  75.76,
+                                                       "safety":  71.42,
+                                                       "reliability":  72.24
+                                                   },
+                              "provider":  "groq",
+                              "model_key":  "llama-4-scout-17b",
+                              "subcategory_scores":  {
+                                                         "gdpr":  88.72,
+                                                         "ai_act":  75.87,
+                                                         "risk":  71.42,
+                                                         "consistency":  72.24,
+                                                         "audit":  85.53,
+                                                         "financial":  83.3,
+                                                         "hipaa":  90,
+                                                         "explainability":  75.76
+                                                     }
+                          },
+    "llama-3.3-70b":  {
+                          "overall_mean_pct":  72.43,
+                          "display_name":  "Llama-3.3-70B-Versatile",
+                          "governance_index":  72.08,
+                          "n_passed":  124,
+                          "difficulty_scores":  {
+                                                    "easy":  69.85,
+                                                    "hard":  71.84,
+                                                    "medium":  73.32
+                                                },
+                          "overall_std_pct":  22.17,
+                          "n_tasks":  139,
+                          "family":  "Llama",
+                          "api_id":  "llama-3.3-70b-versatile",
+                          "params_b":  70,
+                          "n_failed":  15,
+                          "pass_rates":  {
+                                             "accountability":  100,
+                                             "compliance":  87.5,
+                                             "transparency":  91.3,
+                                             "safety":  84.6,
+                                             "reliability":  83.3
+                                         },
+                          "avg_response_time_s":  5.19,
+                          "avg_response_words":  623.9,
+                          "overall_pass_rate":  89.2,
+                          "dimension_scores":  {
+                                                   "accountability":  77.26,
+                                                   "compliance":  74.56,
+                                                   "transparency":  69.73,
+                                                   "safety":  70.88,
+                                                   "reliability":  67.92
+                                               },
+                          "provider":  "groq",
+                          "model_key":  "llama-3.3-70b",
+                          "subcategory_scores":  {
+                                                     "gdpr":  77.53,
+                                                     "ai_act":  71.23,
+                                                     "risk":  70.88,
+                                                     "consistency":  67.92,
+                                                     "audit":  77.26,
+                                                     "financial":  73.07,
+                                                     "hipaa":  79.06,
+                                                     "explainability":  69.73
+                                                 }
+                      },
+    "qwen3-32b":  {
+                      "overall_mean_pct":  60.73,
+                      "display_name":  "Qwen3-32B",
+                      "governance_index":  59.54,
+                      "n_passed":  103,
+                      "difficulty_scores":  {
+                                                "easy":  52.75,
+                                                "hard":  59.54,
+                                                "medium":  62.93
+                                            },
+                      "overall_std_pct":  23.64,
+                      "n_tasks":  139,
+                      "family":  "Qwen",
+                      "api_id":  "qwen/qwen3-32b",
+                      "params_b":  32,
+                      "n_failed":  36,
+                      "pass_rates":  {
+                                         "accountability":  84.6,
+                                         "compliance":  72.5,
+                                         "transparency":  65.2,
+                                         "safety":  65.4,
+                                         "reliability":  83.3
+                                     },
+                      "avg_response_time_s":  11.58,
+                      "avg_response_words":  246,
+                      "overall_pass_rate":  74.1,
+                      "dimension_scores":  {
+                                               "accountability":  66.81,
+                                               "compliance":  63.66,
+                                               "transparency":  50.83,
+                                               "safety":  54.31,
+                                               "reliability":  65.71
+                                           },
+                      "provider":  "groq",
+                      "model_key":  "qwen3-32b",
+                      "subcategory_scores":  {
+                                                 "gdpr":  64.5,
+                                                 "ai_act":  59.69,
+                                                 "risk":  54.31,
+                                                 "consistency":  65.71,
+                                                 "audit":  66.81,
+                                                 "financial":  69.58,
+                                                 "hipaa":  61.15,
+                                                 "explainability":  50.83
+                                             }
+                  },
+    "gpt-oss-120b":  {
+                         "overall_mean_pct":  53.29,
+                         "display_name":  "GPT-OSS-120B",
+                         "governance_index":  52.25,
+                         "n_passed":  93,
+                         "difficulty_scores":  {
+                                                   "easy":  61.62,
+                                                   "hard":  47.64,
+                                                   "medium":  57
+                                               },
+                         "overall_std_pct":  26.1,
+                         "n_tasks":  139,
+                         "family":  "GPT-OSS",
+                         "api_id":  "openai/gpt-oss-120b",
+                         "params_b":  120,
+                         "n_failed":  46,
+                         "pass_rates":  {
+                                            "accountability":  57.7,
+                                            "compliance":  80,
+                                            "transparency":  43.5,
+                                            "safety":  61.5,
+                                            "reliability":  83.3
+                                        },
+                         "avg_response_time_s":  8.81,
+                         "avg_response_words":  312.6,
+                         "overall_pass_rate":  66.9,
+                         "dimension_scores":  {
+                                                  "accountability":  45.29,
+                                                  "compliance":  64.7,
+                                                  "transparency":  42.99,
+                                                  "safety":  46.86,
+                                                  "reliability":  59.79
+                                              },
+                         "provider":  "groq",
+                         "model_key":  "gpt-oss-120b",
+                         "subcategory_scores":  {
+                                                    "gdpr":  71.59,
+                                                    "ai_act":  55.48,
+                                                    "risk":  46.86,
+                                                    "consistency":  59.79,
+                                                    "audit":  45.29,
+                                                    "financial":  61.93,
+                                                    "hipaa":  76.62,
+                                                    "explainability":  42.99
+                                                }
+                     },
+    "allam-2-7b":  {
+                       "overall_mean_pct":  61.11,
+                       "display_name":  "Allam-2-7B",
+                       "governance_index":  59.84,
+                       "n_passed":  101,
+                       "difficulty_scores":  {
+                                                 "easy":  51.45,
+                                                 "hard":  60.96,
+                                                 "medium":  62.63
+                                             },
+                       "overall_std_pct":  26.05,
+                       "n_tasks":  139,
+                       "family":  "Allam",
+                       "api_id":  "allam-2-7b",
+                       "params_b":  7,
+                       "n_failed":  38,
+                       "pass_rates":  {
+                                          "accountability":  88.5,
+                                          "compliance":  77.5,
+                                          "transparency":  52.2,
+                                          "safety":  69.2,
+                                          "reliability":  70.8
+                                      },
+                       "avg_response_time_s":  12.14,
+                       "avg_response_words":  707.3,
+                       "overall_pass_rate":  72.7,
+                       "dimension_scores":  {
+                                                "accountability":  72.93,
+                                                "compliance":  63.68,
+                                                "transparency":  49.62,
+                                                "safety":  55.69,
+                                                "reliability":  60.89
+                                            },
+                       "provider":  "groq",
+                       "model_key":  "allam-2-7b",
+                       "subcategory_scores":  {
+                                                  "gdpr":  65.69,
+                                                  "ai_act":  55.33,
+                                                  "risk":  55.69,
+                                                  "consistency":  60.89,
+                                                  "audit":  72.93,
+                                                  "financial":  66.82,
+                                                  "hipaa":  70.94,
+                                                  "explainability":  49.62
+                                              }
+                   },
+    "llama-3.1-8b":  {
+                         "overall_mean_pct":  72.12,
+                         "display_name":  "Llama-3.1-8B-Instruct",
+                         "governance_index":  71.41,
+                         "n_passed":  120,
+                         "difficulty_scores":  {
+                                                   "easy":  66.88,
+                                                   "hard":  70.91,
+                                                   "medium":  73.94
+                                               },
+                         "overall_std_pct":  24.02,
+                         "n_tasks":  139,
+                         "family":  "Llama",
+                         "api_id":  "llama-3.1-8b-instant",
+                         "params_b":  8,
+                         "n_failed":  19,
+                         "pass_rates":  {
+                                            "accountability":  96.2,
+                                            "compliance":  92.5,
+                                            "transparency":  78.3,
+                                            "safety":  80.8,
+                                            "reliability":  79.2
+                                        },
+                         "avg_response_time_s":  9.16,
+                         "avg_response_words":  580.8,
+                         "overall_pass_rate":  86.3,
+                         "dimension_scores":  {
+                                                  "accountability":  84.33,
+                                                  "compliance":  70.21,
+                                                  "transparency":  67.23,
+                                                  "safety":  68.87,
+                                                  "reliability":  70.31
+                                              },
+                         "provider":  "groq",
+                         "model_key":  "llama-3.1-8b",
+                         "subcategory_scores":  {
+                                                    "gdpr":  75.53,
+                                                    "ai_act":  64.63,
+                                                    "risk":  68.87,
+                                                    "consistency":  70.31,
+                                                    "audit":  84.33,
+                                                    "financial":  71.14,
+                                                    "hipaa":  72.66,
+                                                    "explainability":  67.23
+                                                }
+                     }
+}

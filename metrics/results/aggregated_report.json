@@ -1,0 +1,142 @@
+{
+  "cross_model_summary": {
+    "dimension_cross_model": {
+      "compliance": {
+        "cross_model_mean": 70.02,
+        "cross_model_std": 7.14,
+        "best_model": "llama-4-scout-17b",
+        "worst_model": "qwen3-32b",
+        "best_score": 83.31,
+        "worst_score": 63.66,
+        "gap": 19.65
+      },
+      "transparency": {
+        "cross_model_mean": 59.36,
+        "cross_model_std": 12.07,
+        "best_model": "llama-4-scout-17b",
+        "worst_model": "gpt-oss-120b",
+        "best_score": 75.76,
+        "worst_score": 42.99,
+        "gap": 32.77
+      },
+      "accountability": {
+        "cross_model_mean": 72.03,
+        "cross_model_std": 13.56,
+        "best_model": "llama-4-scout-17b",
+        "worst_model": "gpt-oss-120b",
+        "best_score": 85.53,
+        "worst_score": 45.29,
+        "gap": 40.24
+      },
+      "safety": {
+        "cross_model_mean": 61.34,
+        "cross_model_std": 9.49,
+        "best_model": "llama-4-scout-17b",
+        "worst_model": "gpt-oss-120b",
+        "best_score": 71.42,
+        "worst_score": 46.86,
+        "gap": 24.56
+      },
+      "reliability": {
+        "cross_model_mean": 66.14,
+        "cross_model_std": 4.58,
+        "best_model": "llama-4-scout-17b",
+        "worst_model": "gpt-oss-120b",
+        "best_score": 72.24,
+        "worst_score": 59.79,
+        "gap": 12.45
+      }
+    },
+    "governance_index_ranking": [
+      {
+        "rank": 1,
+        "model": "llama-4-scout-17b",
+        "gi": 77.5
+      },
+      {
+        "rank": 2,
+        "model": "llama-3.3-70b",
+        "gi": 72.08
+      },
+      {
+        "rank": 3,
+        "model": "llama-3.1-8b",
+        "gi": 71.41
+      },
+      {
+        "rank": 4,
+        "model": "allam-2-7b",
+        "gi": 59.84
+      },
+      {
+        "rank": 5,
+        "model": "qwen3-32b",
+        "gi": 59.54
+      },
+      {
+        "rank": 6,
+        "model": "gpt-oss-120b",
+        "gi": 52.25
+      }
+    ],
+    "n_models": 6,
+    "n_tasks_per_model": 139,
+    "gi_range": {
+      "max": 77.5,
+      "min": 52.25,
+      "spread": 25.25
+    }
+  },
+  "failure_mode_analysis": {
+    "global_counts": {},
+    "global_percentages": {},
+    "per_model": {
+      "llama-4-scout-17b": {},
+      "llama-3.3-70b": {},
+      "qwen3-32b": {},
+      "gpt-oss-120b": {},
+      "allam-2-7b": {},
+      "llama-3.1-8b": {}
+    },
+    "total_failures": 167
+  },
+  "difficulty_analysis": {
+    "easy": {
+      "per_model": {
+        "llama-4-scout-17b": 71.15,
+        "llama-3.3-70b": 69.85,
+        "qwen3-32b": 52.75,
+        "gpt-oss-120b": 61.62,
+        "allam-2-7b": 51.45,
+        "llama-3.1-8b": 66.88
+      },
+      "cross_model_mean": 62.28,
+      "cross_model_std": 7.81
+    },
+    "medium": {
+      "per_model": {
+        "llama-4-scout-17b": 80.5,
+        "llama-3.3-70b": 73.32,
+        "qwen3-32b": 62.93,
+        "gpt-oss-120b": 57,
+        "allam-2-7b": 62.63,
+        "llama-3.1-8b": 73.94
+      },
+      "cross_model_mean": 68.39,
+      "cross_model_std": 8.11
+    },
+    "hard": {
+      "per_model": {
+        "llama-4-scout-17b": 77.06,
+        "llama-3.3-70b": 71.84,
+        "qwen3-32b": 59.54,
+        "gpt-oss-120b": 47.64,
+        "allam-2-7b": 60.96,
+        "llama-3.1-8b": 70.91
+      },
+      "cross_model_mean": 64.66,
+      "cross_model_std": 9.78
+    }
+  },
+  "n_total_tasks_evaluated": 834
+}

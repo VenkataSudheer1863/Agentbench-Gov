@@ -1,0 +1,200 @@
+[
+  {
+    "rank": 1,
+    "model_key": "llama-4-scout-17b",
+    "display_name": "Llama-4-Scout-17B-16E",
+    "short_name": "Llama-4-Scout-17B",
+    "family": "Llama4",
+    "params_b": 17,
+    "provider": "groq",
+    "api_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "governance_index": 77.5,
+    "dimension_scores": {
+      "accountability": 85.53,
+      "compliance": 83.31,
+      "transparency": 75.76,
+      "safety": 71.42,
+      "reliability": 72.24
+    },
+    "difficulty_scores": {
+      "easy": 71.15,
+      "hard": 77.06,
+      "medium": 80.5
+    },
+    "pass_rates": {
+      "accountability": 100,
+      "compliance": 95,
+      "transparency": 95.7,
+      "safety": 76.9,
+      "reliability": 83.3
+    },
+    "overall_pass_rate": 90.6,
+    "avg_response_time_s": 1.98,
+    "n_tasks": 139
+  },
+  {
+    "rank": 2,
+    "model_key": "llama-3.3-70b",
+    "display_name": "Llama-3.3-70B-Versatile",
+    "short_name": "Llama-3.3-70B",
+    "family": "Llama",
+    "params_b": 70,
+    "provider": "groq",
+    "api_id": "llama-3.3-70b-versatile",
+    "governance_index": 72.08,
+    "dimension_scores": {
+      "accountability": 77.26,
+      "compliance": 74.56,
+      "transparency": 69.73,
+      "safety": 70.88,
+      "reliability": 67.92
+    },
+    "difficulty_scores": {
+      "easy": 69.85,
+      "hard": 71.84,
+      "medium": 73.32
+    },
+    "pass_rates": {
+      "accountability": 100,
+      "compliance": 87.5,
+      "transparency": 91.3,
+      "safety": 84.6,
+      "reliability": 83.3
+    },
+    "overall_pass_rate": 89.2,
+    "avg_response_time_s": 5.19,
+    "n_tasks": 139
+  },
+  {
+    "rank": 3,
+    "model_key": "llama-3.1-8b",
+    "display_name": "Llama-3.1-8B-Instruct",
+    "short_name": "Llama-3.1-8B",
+    "family": "Llama",
+    "params_b": 8,
+    "provider": "groq",
+    "api_id": "llama-3.1-8b-instant",
+    "governance_index": 71.41,
+    "dimension_scores": {
+      "accountability": 84.33,
+      "compliance": 70.21,
+      "transparency": 67.23,
+      "safety": 68.87,
+      "reliability": 70.31
+    },
+    "difficulty_scores": {
+      "easy": 66.88,
+      "hard": 70.91,
+      "medium": 73.94
+    },
+    "pass_rates": {
+      "accountability": 96.2,
+      "compliance": 92.5,
+      "transparency": 78.3,
+      "safety": 80.8,
+      "reliability": 79.2
+    },
+    "overall_pass_rate": 86.3,
+    "avg_response_time_s": 9.16,
+    "n_tasks": 139
+  },
+  {
+    "rank": 4,
+    "model_key": "allam-2-7b",
+    "display_name": "Allam-2-7B",
+    "short_name": "Allam-2-7B",
+    "family": "Allam",
+    "params_b": 7,
+    "provider": "groq",
+    "api_id": "allam-2-7b",
+    "governance_index": 59.84,
+    "dimension_scores": {
+      "accountability": 72.93,
+      "compliance": 63.68,
+      "transparency": 49.62,
+      "safety": 55.69,
+      "reliability": 60.89
+    },
+    "difficulty_scores": {
+      "easy": 51.45,
+      "hard": 60.96,
+      "medium": 62.63
+    },
+    "pass_rates": {
+      "accountability": 88.5,
+      "compliance": 77.5,
+      "transparency": 52.2,
+      "safety": 69.2,
+      "reliability": 70.8
+    },
+    "overall_pass_rate": 72.7,
+    "avg_response_time_s": 12.14,
+    "n_tasks": 139
+  },
+  {
+    "rank": 5,
+    "model_key": "qwen3-32b",
+    "display_name": "Qwen3-32B",
+    "short_name": "Qwen3-32B",
+    "family": "Qwen",
+    "params_b": 32,
+    "provider": "groq",
+    "api_id": "qwen/qwen3-32b",
+    "governance_index": 59.54,
+    "dimension_scores": {
+      "accountability": 66.81,
+      "compliance": 63.66,
+      "transparency": 50.83,
+      "safety": 54.31,
+      "reliability": 65.71
+    },
+    "difficulty_scores": {
+      "easy": 52.75,
+      "hard": 59.54,
+      "medium": 62.93
+    },
+    "pass_rates": {
+      "accountability": 84.6,
+      "compliance": 72.5,
+      "transparency": 65.2,
+      "safety": 65.4,
+      "reliability": 83.3
+    },
+    "overall_pass_rate": 74.1,
+    "avg_response_time_s": 11.58,
+    "n_tasks": 139
+  },
+  {
+    "rank": 6,
+    "model_key": "gpt-oss-120b",
+    "display_name": "GPT-OSS-120B",
+    "short_name": "GPT-OSS-120B",
+    "family": "GPT-OSS",
+    "params_b": 120,
+    "provider": "groq",
+    "api_id": "openai/gpt-oss-120b",
+    "governance_index": 52.25,
+    "dimension_scores": {
+      "accountability": 45.29,
+      "compliance": 64.7,
+      "transparency": 42.99,
+      "safety": 46.86,
+      "reliability": 59.79
+    },
+    "difficulty_scores": {
+      "easy": 61.62,
+      "hard": 47.64,
+      "medium": 57
+    },
+    "pass_rates": {
+      "accountability": 57.7,
+      "compliance": 80,
+      "transparency": 43.5,
+      "safety": 61.5,
+      "reliability": 83.3
+    },
+    "overall_pass_rate": 66.9,
+    "avg_response_time_s": 8.81,
+    "n_tasks": 139
+  }
+]

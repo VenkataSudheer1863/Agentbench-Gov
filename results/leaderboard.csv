@@ -1,0 +1,7 @@
+rank,model,family,params_b,governance_index,compliance,transparency,accountability,safety,reliability,overall_pass_rate,avg_response_time_s,avg_response_words,n_tasks
+1,Llama-4-Scout-17B-16E,Llama4,17.0,77.50,83.31,75.76,85.53,71.42,72.24,90.6,1.98,592.1,139
+2,Llama-3.3-70B-Versatile,Llama,70.0,72.08,74.56,69.73,77.26,70.88,67.92,89.2,5.19,623.9,139
+3,Llama-3.1-8B-Instruct,Llama,8.0,71.41,70.21,67.23,84.33,68.87,70.31,86.3,9.16,580.8,139
+4,Allam-2-7B,Allam,7.0,59.84,63.68,49.62,72.93,55.69,60.89,72.7,12.14,707.3,139
+5,Qwen3-32B,Qwen,32.0,59.54,63.66,50.83,66.81,54.31,65.71,74.1,11.58,246.0,139
+6,GPT-OSS-120B,GPT-OSS,120.0,52.25,64.70,42.99,45.29,46.86,59.79,66.9,8.81,312.6,139

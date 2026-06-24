@@ -1,0 +1,26 @@
+# Credentials
+.env
+*.key
+*.pem
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Notebook intermediate figures (not publication figures)
+figures/notebook_*.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Temp / scratchpad
+*.tmp
