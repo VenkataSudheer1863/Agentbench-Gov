@@ -69,7 +69,7 @@ Benchmark cross-model average GI: **65.44**  |  Gap from average: **+6.64**
 
 ## Strengths and Weaknesses
 
-**Strongest dimension:** Compliance (74.56)
+**Strongest dimension:** Accountability (77.26)
 
 **Weakest dimension:** Reliability (67.92)
 

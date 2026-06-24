@@ -31,7 +31,7 @@
 
 ### Llama-3.3-70B (GI=72.08)
 
-- **Strongest dimension:** Compliance (74.6)
+- **Strongest dimension:** Accountability (77.3)
 - **Weakest dimension:** Reliability (67.9)
 - **Overall pass rate:** 89.2%
 - **Model family:** Llama | **Parameters:** 70B | **Provider:** groq
@@ -39,7 +39,7 @@
 ### Llama-3.1-8B (GI=71.41)
 
 - **Strongest dimension:** Accountability (84.3)
-- **Weakest dimension:** Compliance (70.2)
+- **Weakest dimension:** Transparency (67.2)
 - **Overall pass rate:** 86.3%
 - **Model family:** Llama | **Parameters:** 8B | **Provider:** groq
 

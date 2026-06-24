@@ -34,7 +34,7 @@ Benchmark cross-model average GI: **65.44**  |  Gap from average: **-5.90**
 
 | Dimension | Weight | Score | vs Avg | Pass Rate | Rank |
 |-----------|:------:|:-----:|:------:|:---------:|:----:|
-| Compliance | 25% | 63.66 | -6.36 | 72.5% | #5 |
+| Compliance | 25% | 63.66 | -6.36 | 72.5% | #6 |
 | Transparency | 20% | 50.83 | -8.53 | 65.2% | #4 |
 | Accountability | 15% | 66.81 | -5.22 | 84.6% | #5 |
 | Safety | 25% | 54.31 | -7.03 | 65.4% | #5 |

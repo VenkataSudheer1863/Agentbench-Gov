@@ -33,8 +33,8 @@
 | 2 | Llama-3.3-70B | 74.6 |
 | 3 | Llama-3.1-8B | 70.2 |
 | 4 | GPT-OSS-120B | 64.7 |
-| 4 | Allam-2-7B | 63.7 |
-| 5 | Qwen3-32B | 63.7 |
+| 5 | Allam-2-7B | 63.7 |
+| 6 | Qwen3-32B | 63.7 |
 
 ### Transparency
 

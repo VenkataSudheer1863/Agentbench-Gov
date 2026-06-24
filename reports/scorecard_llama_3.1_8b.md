@@ -71,7 +71,7 @@ Benchmark cross-model average GI: **65.44**  |  Gap from average: **+5.97**
 
 **Strongest dimension:** Accountability (84.33)
 
-**Weakest dimension:** Compliance (70.21)
+**Weakest dimension:** Transparency (67.23)
 
 **Above benchmark average:**
 - Accountability: 84.33 (avg 72.03, +12.3)
